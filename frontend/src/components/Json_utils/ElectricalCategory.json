@@ -1,0 +1,16 @@
+[
+    {
+      "categoryName": "Electrical Plumbing and Appliance Services"
+    },
+    {
+      "names": [
+        {"name": "Electrician", "image": "electrician.jpg"},
+        {"name": "Plumber", "image": "plumber.jpg"},
+        {"name": "AC", "image": "ac.jpg"},
+        {"name": "Refrigerator", "image": "refrigerator.jpg"},
+        {"name": "TV", "image": "tv.jpg"},
+        {"name": "Washing Machine", "image": "washingmachine.jpg"}
+      ]
+    }
+  ]
+  
