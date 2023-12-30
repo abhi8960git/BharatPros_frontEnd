@@ -10,7 +10,7 @@ const CategorySection = ({ categories }) => {
   return (
     <div className="">
       <CustomText fontSize="text-lg">{categories[0].categoryName}</CustomText>
-      <div className="bg-zinc-200 rounded-md shadow-sm grid grid-cols-3 p-2 gap-y-3">
+      <div className=" rounded-md grid grid-cols-3 p-2 gap-y-3">
         {categories[1].names.map(
           (category, index) =>
             (index < 5 || category.name === "See more") && (
