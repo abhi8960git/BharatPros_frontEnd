@@ -4,12 +4,13 @@
     },
     {
       "names": [
-        {"name": "Electrician", "image": "electrician.jpg"},
-        {"name": "Plumber", "image": "plumber.jpg"},
-        {"name": "AC", "image": "ac.jpg"},
-        {"name": "Refrigerator", "image": "refrigerator.jpg"},
-        {"name": "TV", "image": "tv.jpg"},
-        {"name": "Washing Machine", "image": "washingmachine.jpg"}
+        {"name": "Electrician", "image": "/Electrician..jpg"},
+        {"name": "Plumber", "image": "/Plumber.jpg"},
+        {"name": "AC", "image": "/Plumber.jpg"},
+        {"name": "Refrigerator", "image": "/Plumber.jpg"},
+        {"name": "TV", "image": "/Plumber.jpg"},
+        {"name": "Washing Machine", "image": "/Plumber.jpg"},
+        {"name": "See more", "image": "/see_more.png"}
       ]
     }
   ]

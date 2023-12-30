@@ -29,23 +29,16 @@ const Header = () => {
     <div className="mt-3">
       {/* <CustomText>Categories</CustomText> */}
 
-      <div className="grid grid-cols-2 gap-2 overflow-hidden">
+      <div className="grid grid-cols-2 gap-y-1 overflow-hidden max-w-[80%] m-auto">
         {categoriesData.map((category, index) => (
-          <div className="flex flex-col  justify-center bg-gray-100 rounded-md shadow-sm ">
-            <div className="border-b border-zinc-200 ">
-              <p className="text-lg font-[400] ml-4 ">
-                {category.name}
-              </p>
-            </div>
+          <div className="flex flex-col  justify-center items-center  rounded-md  " key={category.name}>
             <div
               key={category.name}
-              className="flex justify-center items-center "
+              className="flex flex-col justify-center items-center bg-gray-200  rounded-lg shadow-sm "
             >
               <img src={category.image} alt={category.name} width={130} />
-              <span className="text-6xl font-[300] text-[#DDA0DD] cursor-pointer hover:text-black transition-all duration-200">
-                <IoArrowForwardCircleOutline />
-              </span>
             </div>
+            <p className="text-sm font-[400] mt-1 ">{category.name}</p>
           </div>
         ))}
       </div>
