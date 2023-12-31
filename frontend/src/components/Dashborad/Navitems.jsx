@@ -1,7 +1,7 @@
 import React from "react";
-import { RxHamburgerMenu } from "react-icons/rx";
 import { CiSearch } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const SearchComponent = () => {
   return (
@@ -26,7 +26,7 @@ const Navitems = () => {
           <span className="flex items-center gap-1 ml-[2px] cursor-pointer hover:bg-zinc-400 transition-all duration-200"> Chamba<IoIosArrowDown /></span>
         </div>
         <span className="text-3xl">
-          <RxHamburgerMenu />
+          <GiHamburgerMenu />
         </span>
       </div>
 

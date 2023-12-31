@@ -1,6 +1,5 @@
 import React from "react";
 import CustomText from "./CustomText";
-import { IoArrowForwardCircleOutline } from "react-icons/io5";
 const categoriesData = [
   {
     name: "Hotels",
