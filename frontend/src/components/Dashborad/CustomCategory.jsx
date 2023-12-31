@@ -18,7 +18,7 @@ const CategorySection = ({ categories }) => {
                 key={index}
                 className="flex flex-col justify-center items-center cursor-pointer"
               >
-                <div className={`overflow-hidden rounded-lg border-2 border-zinc-300 ${category.name === "See more" ? "border-none":""} `}>
+                <div className={`overflow-hidden rounded-lg border-1 border-zinc-300 ${category.name === "See more" ? "border-none":""} `}>
                   {" "}
                   <img
                     src={`${category.image}`}

@@ -34,7 +34,7 @@ const Header = () => {
           <div className="flex flex-col  justify-center items-center  rounded-md  " key={category.name}>
             <div
               key={category.name}
-              className="flex flex-col justify-center items-center bg-gray-200  rounded-lg shadow-sm "
+              className="flex flex-col justify-center items-center glass  rounded-lg shadow-sm "
             >
               <img src={category.image} alt={category.name} width={130} />
             </div>
