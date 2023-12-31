@@ -27,7 +27,7 @@ const CategorySection = ({ categories }) => {
                   />
                 </div>
                 {/* <img src={`/Electrician.png`} alt={category.name} width={60} /> */}
-                <p className="text-[0.9em]">{category.name}</p>
+                <p className="text-[0.9em] mt-1">{category.name}</p>
               </div>
             )
         )}
