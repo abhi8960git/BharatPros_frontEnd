@@ -25,7 +25,7 @@ export default function Swipe(props) {
         //   disableOnInteraction: true,
         // }}
         modules={[Autoplay, EffectFade, Navigation, Pagination]}
-        className="mySwiper"
+        className="mySwiper rounded-md  w-full"
       >
         <SwiperSlide className='border-z-10 h-[30px] '>
           <img src={props.photo1} />

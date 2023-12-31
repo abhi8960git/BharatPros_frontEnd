@@ -6,17 +6,15 @@ import reportWebVitals from "./reportWebVitals";
 import Navitems from "./components/Dashborad/Navitems";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Hotel from "./Pages/Hotel";
+import Home from './Pages/Home'
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <>
-      <Router>
-        <Navitems />
-        <App />
-        <Routes>
-          <Route path="/hotels" Component={Hotel} />
-        </Routes>
-      </Router>
+  <div className="">
+  <Navitems/>
+  </div>
+     <App></App>
     </>
   </React.StrictMode>
 );
