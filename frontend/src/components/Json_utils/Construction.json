@@ -1,0 +1,55 @@
+[
+    {
+        "categoryName": "Construction, Home and Decors and Architects",
+        "categories": [
+          {
+            "name": "Architects",
+            "image": "electrician.jpg",
+            "locations": [
+              "Shahpur",
+              "Dharmshala"
+            ]
+          },
+          {
+            "name": "Modular Kitchen",
+            "image": "plumber.jpg",
+            "locations": [
+              "Shahpur",
+              "Dharmshala"
+            ]
+          },
+          {
+            "name": "Raj Mistri",
+            "image": "plumber.jpg",
+            "locations": [
+              "Shahpur",
+              "Dharmshala"
+            ]
+          },
+          {
+            "name": "Painter",
+            "image": "plumber.jpg",
+            "locations": [
+              "Shahpur",
+              "Dharmshala"
+            ]
+          },
+          {
+            "name": "Carpainters",
+            "image": "plumber.jpg",
+            "locations": [
+              "Shahpur",
+              "Dharmshala"
+            ]
+          },
+          {
+            "name": "Weldors",
+            "image": "plumber.jpg",
+            "locations": [
+              "Shahpur",
+              "Dharmshala"
+            ]
+          }
+        ]
+      }
+]

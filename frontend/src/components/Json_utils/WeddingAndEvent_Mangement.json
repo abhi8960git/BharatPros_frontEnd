@@ -1,0 +1,55 @@
+[
+    {
+        "categoryName": "Wedding and Event Management",
+        "categories": [
+          {
+            "name": "Dham Boti",
+            "image": "electrician.jpg",
+            "locations": [
+              "Shahpur",
+              "Dharmshala"
+            ]
+          },
+          {
+            "name": "Green Patal",
+            "image": "plumber.jpg",
+            "locations": [
+              "Shahpur",
+              "Dharmshala"
+            ]
+          },
+          {
+            "name": "Catering",
+            "image": "plumber.jpg",
+            "locations": [
+              "Shahpur",
+              "Dharmshala"
+            ]
+          },
+          {
+            "name": "Tent",
+            "image": "plumber.jpg",
+            "locations": [
+              "Shahpur",
+              "Dharmshala"
+            ]
+          },
+          {
+            "name": "DJ",
+            "image": "plumber.jpg",
+            "locations": [
+              "Shahpur",
+              "Dharmshala"
+            ]
+          },
+          {
+            "name": "Waiters",
+            "image": "plumber.jpg",
+            "locations": [
+              "Shahpur",
+              "Dharmshala"
+            ]
+          }
+        ]
+      }
+]

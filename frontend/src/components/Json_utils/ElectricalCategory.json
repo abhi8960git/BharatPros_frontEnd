@@ -1,16 +1,14 @@
 [
     {
-      "categoryName": "Electrical Plumbing and Appliance Services"
-    },
-    {
-      "names": [
+      "categoryName": "Electrical Plumbing and Appliance Services",
+    
+      "categories": [
         {"name": "Electrician", "image": "/Electrician..jpg"},
         {"name": "Plumber", "image": "/Plumber.jpg"},
         {"name": "AC", "image": "/Plumber.jpg"},
         {"name": "Refrigerator", "image": "/Plumber.jpg"},
         {"name": "TV", "image": "/Plumber.jpg"},
-        {"name": "Washing Machine", "image": "/Plumber.jpg"},
-        {"name": "See more", "image": "/see_more.png"}
+        {"name": "Washing Machine", "image": "/Plumber.jpg"}
       ]
     }
   ]

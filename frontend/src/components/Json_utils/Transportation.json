@@ -1,0 +1,23 @@
+[
+    {
+        "categoryName": "Transportation",
+        "categories": [
+          {
+            "name": "Taxis",
+            "image": "electrician.jpg",
+            "locations": [
+              "Shahpur",
+              "Dharmshala"
+            ]
+          },
+          {
+            "name": "Pick up Vans",
+            "image": "plumber.jpg",
+            "locations": [
+              "Shahpur",
+              "Dharmshala"
+            ]
+          }
+        ]
+      }
+]
