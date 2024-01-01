@@ -30,7 +30,7 @@ const CategorySection = ({ categories }) => {
         <Carousel
           swipeable={true}
           removeArrowOnDeviceType={["mobile"]}
-          showDots={true}
+          // showDots={true}
           dotListClass="mt-"
           itemClass="carousel-item-padding-40-px mb-5"
           responsive={responsive}
