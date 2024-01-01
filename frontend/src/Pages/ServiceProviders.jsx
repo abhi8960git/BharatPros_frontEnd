@@ -2,22 +2,22 @@ import React from "react";
 import { Wrapper } from "../components/Dashborad/Wrapper";
 import SearchComponent from "../components/Dashborad/SearchComponent";
 import HotelCard from "../components/HotelCard";
+import ProfileCard from "../components/ProfileCard";
 import Search from "../components/Search";
 
-const Hotel = () => {
+const ServiceProviders = () => {
   return (
     <Wrapper>
       <div className="">
         <div className="flex justify-center sticky">
-        {/* <SearchComponent placeholderText="Search Hotels.." /> */}
-        <Search/>
-
+          {/* <SearchComponent placeholderText="Search Hotels.." /> */}
+          <Search />
         </div>
-        <div className="mt-3 flex flex-col gap-3 ">
-          {[0, 1, 2].map(() => (
-            <>
-              <HotelCard />
-            </>
+        <div className="mt-3 grid grid-cols-2 gap-2 mx-1 ">
+          {[0, 1, 2].map((index) => (
+            <div key={index}>
+              <ProfileCard />
+            </div>
           ))}
         </div>
       </div>
@@ -25,4 +25,4 @@ const Hotel = () => {
   );
 };
 
-export default Hotel;
+export default ServiceProviders;

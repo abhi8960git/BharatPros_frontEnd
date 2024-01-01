@@ -4,8 +4,18 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross1 } from "react-icons/rx";
 import { Modal } from "antd";
 import { MdLogin } from "react-icons/md";
+import { MuiTelInput } from "mui-tel-input";
+import { Input } from "@mui/material";
+
 const Navitems = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // number input
+  const [phone, setPhone] = React.useState("");
+
+  const handleChange = (newPhone) => {
+    setPhone(newPhone);
+  };
 
   // handler function for modal ---> start
 
@@ -50,7 +60,9 @@ const Navitems = () => {
           onClick={showModal}
         >
           Login / SignUp
-          <span className="font-bold"><MdLogin/></span>
+          <span className="font-bold">
+            <MdLogin />
+          </span>
         </button>
       </div>
 
@@ -63,55 +75,55 @@ const Navitems = () => {
             <RxCross1 />
           </span>
           <div className="py-4 px-8 mt-[30px]"> */}
-            {/* <button
+      {/* <button
               className=" border-[1px] border-black px-3 py-1 rounded-[9px] shadow-md hover:bg-black hover:text-white transition-all duration-200"
               onClick={showModal}
             >
               Login
             </button> */}
-            {/* Add more menu items as needed */}
+      {/* Add more menu items as needed */}
 
-            {/* modal */}
-            <Modal
-              title="Login / SignUp"
-              open={isModalOpen}
-              onOk={handleOk}
-              onCancel={handleCancel}
-              footer={null}
-            >
-              <div className="flex flex-col gap-3">
-                <div className="flex gap-4">
-                  <input
-                    type="number"
-                    id="numberInput"
-                    name="numberInput"
-                    placeholder="Enter Your Mobile Number.."
-                    className="outline-none border border-zinc-400 rounded-md px-2 text-md py-1 "
-                    // value={numberValue}
-                    // onChange={handleInputChange}
-                  />
-                  <button className=" border border-black px-[1.2em] rounded-md flex items-center justify-center gap-1 text-black  hover:text-white hover:bg-black transition-all duration-200 ">
-                    LogIn
-                    <span><MdLogin/></span>
-                  </button>
-                </div>
-                <div className="flex gap-4">
-                  <input
-                    type="number"
-                    id="numberInput"
-                    name="numberInput"
-                    placeholder="Enter OTP .."
-                    className="outline-none border border-zinc-400 rounded-md px-2 text-md py-1 "
-                    // value={numberValue}
-                    // onChange={handleInputChange}
-                  />
-                  <button className="  border border-black px-[0.8em] rounded-md flex items-center justify-center gap-1 text-black  hover:text-white hover:bg-black transition-all duration-200 ">
-                    Verify OTP
-                  </button>
-                </div>
-              </div>
-            </Modal>
-          {/* </div>
+      {/* modal */}
+      <Modal
+        title="Login / SignUp"
+        open={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+        footer={null}
+      >
+        <div className="flex flex-col gap-3  ">
+          <div className="grid grid-cols-10 gap-2 ">
+            <div className="col-span-7">
+              <MuiTelInput
+                className="phone-input"
+                size="small"
+                defaultCountry="IN"
+                value={phone}
+                onChange={handleChange}
+              />
+            </div>
+            <button className=" col-span-3 border border-black px-[1.2em] rounded-md flex items-center justify-center gap-1 text-black hover:text-white hover:bg-black transition-all duration-200">
+              LogIn
+              <span>
+                <MdLogin />
+              </span>
+            </button>
+          </div>
+          <div className="grid grid-cols-10 gap-2 ">
+            <input
+              type="number"
+              id="numberInput"
+              name="numberInput"
+              placeholder="Enter OTP .."
+              className=" col-span-7 outline-blue-600 text-[15px] border border-zinc-300 rounded-[4px] px-[9px] text-md py-[7px] "
+            />
+            <button className=" col-span-3 border border-black px-[1em] rounded-md flex items-center justify-center gap-1 text-black hover:text-white hover:bg-black transition-all duration-200 py-[7px]">
+              Verify 
+            </button>
+          </div>
+        </div>
+      </Modal>
+      {/* </div>
         </div>
       )} */}
 
