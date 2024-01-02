@@ -11,6 +11,10 @@ const Home = () => {
   return (
     <div>
       <Wrapper>
+        <div className="bg-[#f5f5f5] flex flex-col items-center justify-center  ">
+          <img src='/Looking_service_providers.png' alt="image_service_provider"/>
+          <button className="  bg-transparent hover:bg-[#c9c5c5] text-gray-600 font-bold  border-2 border-[#c5c5c5] p-2 rounded-lg px-3 shadow-sm mb-4">Register As service Provider</button>
+        </div>
       <Header />
       <CategorySection categories={ElectricalCategories} />
        <CategorySection categories={ConstructionCategories} />
