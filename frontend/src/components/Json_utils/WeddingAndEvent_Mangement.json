@@ -4,7 +4,7 @@
         "categories": [
           {
             "name": "Dham Boti",
-            "image": "electrician.jpg",
+            "image": "/DhaamBoti.jpeg",
             "locations": [
               "Shahpur",
               "Dharmshala"
@@ -12,7 +12,7 @@
           },
           {
             "name": "Green Patal",
-            "image": "plumber.jpg",
+            "image": "/Patal.jpeg",
             "locations": [
               "Shahpur",
               "Dharmshala"
@@ -20,7 +20,7 @@
           },
           {
             "name": "Catering",
-            "image": "plumber.jpg",
+            "image": "/Catring.jpeg",
             "locations": [
               "Shahpur",
               "Dharmshala"
@@ -28,7 +28,7 @@
           },
           {
             "name": "Tent",
-            "image": "plumber.jpg",
+            "image": "/Tent.jpeg",
             "locations": [
               "Shahpur",
               "Dharmshala"
@@ -36,7 +36,7 @@
           },
           {
             "name": "DJ",
-            "image": "plumber.jpg",
+            "image": "/Dj.jpeg",
             "locations": [
               "Shahpur",
               "Dharmshala"
@@ -44,7 +44,7 @@
           },
           {
             "name": "Waiters",
-            "image": "plumber.jpg",
+            "image": "/Waiter.jpeg",
             "locations": [
               "Shahpur",
               "Dharmshala"

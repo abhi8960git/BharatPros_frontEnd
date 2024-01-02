@@ -4,7 +4,7 @@
         "categories": [
           {
             "name": "Taxis",
-            "image": "electrician.jpg",
+            "image": "/Taxies.jpeg",
             "locations": [
               "Shahpur",
               "Dharmshala"
@@ -12,7 +12,7 @@
           },
           {
             "name": "Pick up Vans",
-            "image": "plumber.jpg",
+            "image": "/PickUp.jpeg",
             "locations": [
               "Shahpur",
               "Dharmshala"

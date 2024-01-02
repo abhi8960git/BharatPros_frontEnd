@@ -1,23 +1,39 @@
 [
-    {
-        "categoryName": "Transportation",
-        "categories": [
-          {
-            "name": "Taxis",
-            "image": "electrician.jpg",
-            "locations": [
-              "Shahpur",
-              "Dharmshala"
-            ]
-          },
-          {
-            "name": "Pick up Vans",
-            "image": "plumber.jpg",
-            "locations": [
-              "Shahpur",
-              "Dharmshala"
-            ]
-          }
+  {
+    "categoryName": "Rentals",
+    "categories": [
+      {
+        "name": "PG",
+        "image": "PG.jpeg",
+        "locations": [
+          "Shahpur",
+          "Dharmshala"
+        ]
+      },
+      {
+        "name": "Single Room",
+        "image": "/SingleRoom.jpeg",
+        "locations": [
+          "Shahpur",
+          "Dharmshala"
+        ]
+      },
+      {
+        "name": "Flats/Homes",
+        "image": "Flats.jpeg",
+        "locations": [
+          "Shahpur",
+          "Dharmshala"
+        ]
+      },
+      {
+        "name": "Shops",
+        "image": "Shops.jpeg",
+        "locations": [
+          "Shahpur",
+          "Dharmshala"
         ]
       }
+    ]
+  }
 ]

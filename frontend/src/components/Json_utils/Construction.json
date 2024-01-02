@@ -4,7 +4,7 @@
         "categories": [
           {
             "name": "Architects",
-            "image": "electrician.jpg",
+            "image": "/architecht.jpeg",
             "locations": [
               "Shahpur",
               "Dharmshala"
@@ -12,7 +12,7 @@
           },
           {
             "name": "Modular Kitchen",
-            "image": "plumber.jpg",
+            "image": "/Plumber.jpg",
             "locations": [
               "Shahpur",
               "Dharmshala"
@@ -20,7 +20,7 @@
           },
           {
             "name": "Raj Mistri",
-            "image": "plumber.jpg",
+            "image": "/RajMistri.jpeg",
             "locations": [
               "Shahpur",
               "Dharmshala"
@@ -28,7 +28,7 @@
           },
           {
             "name": "Painter",
-            "image": "plumber.jpg",
+            "image": "/Painter.jpeg",
             "locations": [
               "Shahpur",
               "Dharmshala"
@@ -36,7 +36,7 @@
           },
           {
             "name": "Carpainters",
-            "image": "plumber.jpg",
+            "image": "/Carpanter.jpeg",
             "locations": [
               "Shahpur",
               "Dharmshala"
@@ -44,7 +44,7 @@
           },
           {
             "name": "Weldors",
-            "image": "plumber.jpg",
+            "image": "/Welder.jpeg",
             "locations": [
               "Shahpur",
               "Dharmshala"
