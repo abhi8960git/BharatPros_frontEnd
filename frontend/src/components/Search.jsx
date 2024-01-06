@@ -3,7 +3,7 @@ import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 import Autocomplete from "@mui/material/Autocomplete";
 
-export default function Search() {
+export default function Search({inputCategory}) {
   return (
     <div className="w-[92%]">
       <Autocomplete
@@ -14,7 +14,7 @@ export default function Search() {
         renderInput={(params) => (
           <TextField
             {...params}
-            label="Search input"
+            label={inputCategory}
             InputProps={{
               ...params.InputProps,
               type: "search",

@@ -4,7 +4,7 @@ import Home from "./Pages/Home";
 import Hotel from "./Pages/Hotel";
 import ServiceProviders from "./Pages/ServiceProviders";
 import "react-multi-carousel/lib/styles.css";
-
+import jobs from "./components/jobs";
 function App() {
   return (
     <>
@@ -15,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/hotels" Component={Hotel} />
           <Route path="/service-providers" Component={ServiceProviders}/>
+          <Route path="/jobs" Component={jobs}/>
         </Routes>
       </Router>
     </>

@@ -8,20 +8,23 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Hotel from "./Pages/Hotel";
 import Home from "./Pages/Home";
 import SimpleBottomNavigation from "./components/Dashborad/MobileNav";
+import { NextUIProvider } from "@nextui-org/react";
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
 root.render(
   <React.StrictMode>
     <>
-     <div className="w-full">
-     <div className="">
-        <Navitems />
-      </div>
-      <App></App>
       <div className="w-full">
-        <SimpleBottomNavigation />
+        <div className="">
+          <Navitems />
+        </div>
+        <NextUIProvider>
+          <App></App>
+        </NextUIProvider>
+
+        <div className="w-full">
+          <SimpleBottomNavigation />
+        </div>
       </div>
-     </div>
     </>
   </React.StrictMode>
 );

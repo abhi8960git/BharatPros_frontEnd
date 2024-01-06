@@ -1,0 +1,112 @@
+
+[
+    {
+        "status": {
+            "type": "inactive",
+            "date": "2023-09-15T08:45:21.123Z"
+        },
+        "verificationStatus": {
+            "type": "pending"
+        },
+        "jobStatus": {
+            "type": "closed"
+        },
+        "address": {
+            "country": "USA",
+            "pincodeData": {
+                "pincode": "90210",
+                "poName": "Beverly Hills",
+                "cityBlock": "Westside",
+                "district": "Los Angeles",
+                "stateName": "California"
+            },
+            "landmark": "Rodeo Drive"
+        },
+        "choiceOfJobId": "",
+        "transactionId": "T150923084521987654321",
+        "paymentStatus": "pending",
+        "_id": "6522e289c9d1a29ccadb7b69",
+        "createdBy": {
+            "_id": "652245a0d5fe8f7d5ffe3a55",
+            "name": "Jennifer"
+        },
+        "firmName": "ABC Corporation",
+        "jobCategoryId": {
+            "active": true,
+            "_id": "64821deacbf63a65a7414cef",
+            "jobCategoryName": "Engineer"
+        },
+        "__v": 0,
+        "applies": [],
+        "comments": [],
+        "date": "2023-09-15T08:45:21.125Z",
+        "description": "Engineering position available",
+        "jobSectorId": {
+            "active": true,
+            "_id": "6481c66801cdf2527e8e5e6a",
+            "jobSector": "Technology"
+        },
+        "jobSubscriptionId": {
+            "_id": "648330db4ed7891170e16577",
+            "price": 150
+        },
+        "merchantTransactionId": "9876543210abcdef",
+        "reachableMobile": "+1234567890",
+        "reachablePersonName": "John"
+    },
+    {
+        "status": {
+            "type": "pending",
+            "date": "2023-11-20T12:30:45.890Z"
+        },
+        "verificationStatus": {
+            "type": "approved"
+        },
+        "jobStatus": {
+            "type": "open"
+        },
+        "address": {
+            "country": "Canada",
+            "pincodeData": {
+                "pincode": "M5A 1A1",
+                "poName": "Downtown Toronto",
+                "cityBlock": "Block 123",
+                "district": "Toronto",
+                "stateName": "Ontario"
+            },
+            "landmark": "CN Tower"
+        },
+        "choiceOfJobId": "",
+        "transactionId": "T2011201230455678901234",
+        "paymentStatus": "success",
+        "_id": "6522e289c9d1a29ccadb7b70",
+        "createdBy": {
+            "_id": "652245a0d5fe8f7d5ffe3a56",
+            "name": "Emily"
+        },
+        "firmName": "XYZ Solutions",
+        "jobCategoryId": {
+            "active": true,
+            "_id": "64821deacbf63a65a7414cf0",
+            "jobCategoryName": "Designer"
+        },
+        "__v": 0,
+        "applies": [],
+        "comments": [],
+        "date": "2023-11-20T12:30:45.892Z",
+        "description": "Creative designer wanted",
+        "jobSectorId": {
+            "active": true,
+            "_id": "6481c66801cdf2527e8e5e6b",
+            "jobSector": "Creative Arts"
+        },
+        "jobSubscriptionId": {
+            "_id": "648330db4ed7891170e16578",
+            "price": 120
+        },
+        "merchantTransactionId": "a1b2c3d4e5f6",
+        "reachableMobile": "+14155552671",
+        "reachablePersonName": "David"
+    }    
+    
+]
