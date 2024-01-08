@@ -1,5 +1,7 @@
 import React from "react";
-import Swipe from "./Swiper";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const hotelCard = [
   {
@@ -15,25 +17,39 @@ const hotelCard = [
     hotelImages: [
       "/hotel1.1.jpeg",
       "/hotel1.2.jpeg",
-      "/hotel1.3.jpeg",
+      // "/hotel1.3.jpeg", 
       "/hotel1.4.jpeg",
     ],
   },
 ];
 
 const HotelCard = () => {
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000, // Adjust the autoplay speed in milliseconds
+    // arrows: false, // Remove navigation icon
+  };
+
   return (
     <>
       <div>
         {hotelCard.map((hotel, index) => (
           <div key={index} className="py-4 px-8 bg-[#f5f5f5] ">
-            <div className="flex items-center justify-center rounded-md ">
-              <Swipe
-                photo1={hotel.hotelImages[0]}
-                photo2={hotel.hotelImages[1]}
-                photo3={hotel.hotelImages[2]}
-                photo4={hotel.hotelImages[3]}
-              />
+            <div className="flex items-center justify-center rounded-md border border-black ">
+            <div className="w-full overflow-hidden rounded-md object-fit">
+            <Slider {...settings}>
+                {hotelCard[0].hotelImages.map((e, index) => (
+                  <div key={index} className="rounded-md object-contain">
+                    <img src={e} alt={e}  />
+                  </div>
+                ))}
+              </Slider>
+              </div>
             </div>
             <div className="flex flex-col mt-2 mx-2 gap-1">
               <div className="flex justify-between">
