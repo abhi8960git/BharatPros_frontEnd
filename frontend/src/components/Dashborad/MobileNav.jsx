@@ -23,11 +23,34 @@ const MobileUserSideNav = ({ onClose }) => {
       }}
     >
       {/* Your mobile side navigation content goes here */}
-      <ul>
-        <li>Mobile Nav Item 1</li>
-        <li>Mobile Nav Item 2</li>
-        <li>Mobile Nav Item 3</li>
-      </ul>
+      <div className="">
+        {/* header div */}
+        <div className="bg-[#f5f5f5] py-4 pt-4">
+          <p className="text-lg font-bold text-gray-600 px-2">
+            Welcome Abhishek!
+          </p>
+        </div>
+
+        <div className=" w-full">
+          <ul className="w-full">
+            <li className="flex gap-2 py-3 px-2 border border-b-gray-700">
+              {" "}
+              <img src="/user_profile_icon.svg" alt="user_profile_icon" />
+              MyProfile{" "}
+            </li>
+            <li className="flex gap-2 py-3 px-2 border border-b-gray-700">
+              {" "}
+              <img src="/services_icon.svg" alt="services_icon" />
+              My Services
+            </li>
+            <li className="flex gap-2 py-3 px-2 border border-b-gray-700">
+              {" "}
+              <img src="/logout_icon.svg" alt="logout_icon" />
+              logOut
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };
