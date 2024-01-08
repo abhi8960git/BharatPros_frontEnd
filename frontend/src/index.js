@@ -21,7 +21,7 @@ root.render(
           <App></App>
         </NextUIProvider>
 
-        <div className="w-full">
+        <div className="">
           <SimpleBottomNavigation />
         </div>
       </div>

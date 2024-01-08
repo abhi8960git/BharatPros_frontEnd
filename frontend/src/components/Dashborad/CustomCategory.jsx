@@ -23,7 +23,7 @@ const responsive = {
 
 const CategorySection = ({ categories }) => {
   return (
-    <div className=" bg-[#f5f5f5] w-full px-2 py-3 mt-3">
+    <div className=" bg-[#f5f5f5] w-full px-2 py-1 mt-3">
       <CustomText fontSize="text-lg ml-1">{categories[0].categoryName}</CustomText>
       <div className="rounded-md ">
         <Carousel
@@ -31,7 +31,7 @@ const CategorySection = ({ categories }) => {
           removeArrowOnDeviceType={["mobile"]}
           // showDots={true}
           dotListClass="mt-"
-          itemClass="carousel-item-padding-40-px mb-5"
+          itemClass="carousel-item-padding-40-px mb-[6px]"
           responsive={responsive}
         >
           {categories[0].categories.map((category, index) => (
