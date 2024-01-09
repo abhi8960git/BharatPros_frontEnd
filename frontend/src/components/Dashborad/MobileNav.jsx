@@ -21,31 +21,37 @@ const MobileUserSideNav = ({ onClose }) => {
         background: "white", // semi-transparent black background
         zIndex: 0,
       }}
+      className="bg-[#cfcdcd]"
     >
       {/* Your mobile side navigation content goes here */}
-      <div className="">
+      <div className=" bg-[#f5f5f5] pt-[40px]">
         {/* header div */}
-        <div className="bg-[#f5f5f5] py-4 pt-4">
-          <p className="text-lg font-bold text-gray-600 px-2">
+        <div className="bg-white py-2  flex items-center mx-2 rounded-md shadow-sm">
+          <img src="mobile_user_icon.png" alt="user_icon" width={80} />
+          <p className="font-bold text-gray-600 px-2 text-2xl">
             Welcome Abhishek!
+
           </p>
         </div>
 
         <div className=" w-full">
-          <ul className="w-full">
-            <li className="flex gap-2 py-3 px-2 border border-b-gray-700">
-              {" "}
-              <img src="/user_profile_icon.svg" alt="user_profile_icon" />
-              MyProfile{" "}
+          <ul className="w-full grid grid-cols-2 ">
+            <li className="col-span-1 ">
+              <li className="flex flex-col  gap-2 py-3 px-2 font-bold text-xl justify-center items-center m-2 bg-white  shadow-sm rounded-md ">
+                {" "}
+                <img src="/user_profile_icon.svg" alt="user_profile_icon" width={60} />
+                MyProfile{" "}
+              </li>
+              <li className="flex flex-col  gap-2 py-3 px-2 font-bold text-xl justify-center items-center bg-white m-2  shadow-sm rounded-md">
+                {" "}
+                <img src="/services_icon.svg" alt="services_icon" width={60} />
+                My Services
+              </li>
+
             </li>
-            <li className="flex gap-2 py-3 px-2 border border-b-gray-700">
+            <li className="flex gap-2 py-3 px-2 col-span-1 text-2xl font-bold flex-col items-center justify-center bg-white m-2 shadow-sm rounded-md">
               {" "}
-              <img src="/services_icon.svg" alt="services_icon" />
-              My Services
-            </li>
-            <li className="flex gap-2 py-3 px-2 border border-b-gray-700">
-              {" "}
-              <img src="/logout_icon.svg" alt="logout_icon" />
+              <img src="/logout_icon.svg" alt="logout_icon" width={100} />
               logOut
             </li>
           </ul>
