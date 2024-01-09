@@ -17,7 +17,7 @@ const hotelCard = [
     hotelImages: [
       "/hotel1.1.jpeg",
       "/hotel1.2.jpeg",
-      // "/hotel1.3.jpeg", 
+      // "/hotel1.3.jpeg",
       "/hotel1.4.jpeg",
     ],
   },
@@ -40,15 +40,15 @@ const HotelCard = () => {
       <div>
         {hotelCard.map((hotel, index) => (
           <div key={index} className="py-4 px-8 bg-[#f5f5f5] ">
-            <div className="flex items-center justify-center rounded-md border border-black ">
-            <div className="w-full overflow-hidden rounded-md object-fit">
-            <Slider {...settings}>
-                {hotelCard[0].hotelImages.map((e, index) => (
-                  <div key={index} className="rounded-md object-contain">
-                    <img src={e} alt={e}  />
-                  </div>
-                ))}
-              </Slider>
+            <div className="flex items-center justify-center  ">
+              <div className="w-full overflow-hidden rounded-md object-contain h-[178px]">
+                <Slider {...settings}>
+                  {hotelCard[0].hotelImages.map((e, index) => (
+                    <div key={index} className="rounded-md object-contain ">
+                      <img src={e} alt={e} width="full" height="full" />
+                    </div>
+                  ))}
+                </Slider>
               </div>
             </div>
             <div className="flex flex-col mt-2 mx-2 gap-1">
