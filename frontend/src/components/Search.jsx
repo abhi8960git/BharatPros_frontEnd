@@ -5,7 +5,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 
 export default function Search({inputCategory}) {
   return (
-    <div className="w-[92%]">
+    <div className="w-[92%] z-30">
       <Autocomplete
         freeSolo
         id="free-solo-2-demo"
