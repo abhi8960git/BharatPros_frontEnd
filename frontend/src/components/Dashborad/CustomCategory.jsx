@@ -25,11 +25,10 @@ const CategorySection = ({ categories }) => {
   return (
     <div className=" bg-[#f5f5f5] w-full px-2 py-1 mt-3">
       <CustomText fontSize="text-lg ml-1">{categories[0].categoryName}</CustomText>
-      <div className="rounded-md ">
+      <div className="rounded-md">
         <Carousel
           swipeable={true}
           removeArrowOnDeviceType={["mobile"]}
-          // showDots={true}
           dotListClass="mt-"
           itemClass="carousel-item-padding-40-px mb-[6px]"
           responsive={responsive}
@@ -37,20 +36,21 @@ const CategorySection = ({ categories }) => {
           {categories[0].categories.map((category, index) => (
             <div
               key={index}
-              className="flex flex-col justify-center items-center cursor-pointer"
+              className="flex flex-col justify-center items-center cursor-pointer backdrop-blur-lg"
             >
               <div
-                className={`overflow-hidden rounded-lg border-1 bg-[#f5f5f5] ${
+                className={`overflow-hidden rounded-lg border-1 bg-[#f5f5f5] relative ${
                   category.name === "See more" ? "border-none" : ""
-                } `}
+                } ${true ? "blur-[2px]" : ""}`}
               >
-                <img
-                  src={`${category.image}`}
-                  alt={category.name}
-                  width={110}
-                />
+                <img src={category.image} alt={category.name} width={110} />
               </div>
-              <p className="text-[0.8em] mt-1">{category.name}</p>
+              {true && (
+                <p className="text-[0.8em] font-bold bg-white p-1 rounded-md mt-1 absolute ">Coming Soon</p>
+              )}
+              {!category.comingSoon && (
+                <p className="text-[0.8em] mt-1">{category.name}</p>
+              )}
             </div>
           ))}
         </Carousel>

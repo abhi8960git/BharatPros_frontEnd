@@ -18,6 +18,9 @@ export default function Search({inputCategory}) {
             InputProps={{
               ...params.InputProps,
               type: "search",
+              className:
+                "  rounded-lg h-[50px] focus:outline-none focus:ring focus:border-blue-300",
+        
             }}
           />
         )}
