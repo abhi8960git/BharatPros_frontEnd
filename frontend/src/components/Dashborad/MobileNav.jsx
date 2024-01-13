@@ -68,10 +68,10 @@ const MobileUserSideNav = ({ onClose }) => {
         </div>
 
 
-        <div className="px-3 mt-3">
-          <p className="font-extrabold text-3xl text-gray-400">BharatPros</p>
-          <p className="mt-3">Terms and Conditions </p>
-          <p>Customer Care</p>
+        <div className="px-3 mt-3 flex flex-col text-center">
+          <p className="font-extrabold text-3xl text-gray-400 flex items-center gap-2 justify-center mt-4"> <img src="bharatPros_logo.png" alt="bharatPros" width={30}/>BharatPros</p>
+          <p className="mt-5">Terms and Conditions </p>
+          <p className="flex items-center justify-center gap-2 mt-1">Customer Care<img src="customer_care.svg" alt="customer_care"/></p>
         </div>
 
 

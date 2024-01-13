@@ -41,12 +41,12 @@ const CategorySection = ({ categories }) => {
               <div
                 className={`overflow-hidden rounded-lg border-1 bg-[#f5f5f5] relative ${
                   category.name === "See more" ? "border-none" : ""
-                } ${true ? "blur-[2px]" : ""}`}
+                } ${true ? "blur-[1px]" : ""}`}
               >
                 <img src={category.image} alt={category.name} width={110} />
               </div>
               {true && (
-                <p className="text-[0.8em] font-bold bg-white p-1 rounded-md mt-1 absolute ">Coming Soon</p>
+                <p className="text-[0.8em] font-bold text-black bg-[#f5f5f5] p-2 rounded-md mt-1 absolute bottom-7 ">Coming Soon</p>
               )}
               {!category.comingSoon && (
                 <p className="text-[0.8em] mt-1">{category.name}</p>
