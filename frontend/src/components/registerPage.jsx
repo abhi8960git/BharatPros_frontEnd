@@ -1,27 +1,79 @@
 import React, { useState } from "react";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import TextArea from "antd/es/input/TextArea";
 import { FiPlusCircle } from "react-icons/fi";
 import { RiHome5Line } from "react-icons/ri";
 import { LiaFileInvoiceDollarSolid } from "react-icons/lia";
-import { MdPayment } from "react-icons/md";
+import { MdAddCircleOutline, MdPayment, MdRemoveCircle } from "react-icons/md";
+import { IoMdRemoveCircleOutline } from "react-icons/io";
 
 export function Register() {
   // State variables for form fields
   const [sectors, setSectors] = useState([]);
-
+  const [isreferralOpen, setIsReferralOpen] = useState(false);
   const [selectedSector, setSelectedSector] = useState(null);
   const [services, setServices] = useState([]);
   const [selectedService, setSelectedService] = useState(null);
-  // ...other state variables
+  const [address, setAddress] = useState("");
+  const [buildingArea, setBuildingArea] = useState("");
+  const [floorDetails, setFloorDetails] = useState("");
+  const [landmark, setLandmark] = useState("");
 
-  // ...fetch data for sectors and services
+  const [reachablePerson, setReachablePerson] = useState("");
+  const [reachableNumber, setReachableNumber] = useState("");
+  const [pincode, setPincode] = useState("");
+  const [postoffice, setPostoffice] = useState("");
+  const [city, setCity] = useState("");
+  const [district, setDistrict] = useState("");
+  const [state, setState] = useState("");
+
+  const [showAdditionalAddressFields, setShowAdditionalAddressFields] =
+    useState(false);
+  const [buildingDetails, setBuildingDetails] = useState("");
+
+  const [isAddressOpen, setIsAddressOpen] = useState(false);
+
+  const setAddressOpenHandler = () => {
+    setIsAddressOpen(!isAddressOpen);
+  };
+
+  const setIsReferralOpenHandler = () => {
+    setIsReferralOpen(!isreferralOpen);
+  };
+
+  const handlePincodeChange = (e) => {
+    const enteredPincode = e.target.value;
+    const pincodeData = {
+      postoffice: "Sample Post Office",
+      city: "Sample City",
+      district: "Sample District",
+      state: "Sample State",
+    };
+
+    setPincode(enteredPincode);
+    setPostoffice(pincodeData.postoffice);
+    setCity(pincodeData.city);
+    setDistrict(pincodeData.district);
+    setState(pincodeData.state);
+  };
+
+  const handleCompleteAddressClick = () => {
+    setShowAdditionalAddressFields(!showAdditionalAddressFields);
+    // Implement logic for complete address
+    const completeAddress = `${reachablePerson}, ${reachableNumber}, ${postoffice}, ${city}, ${district}, ${state}`;
+    console.log("Complete Address:", completeAddress);
+  };
+
+  const handleSubmit = () => {
+    // Implement logic for form submission
+    console.log("Form submitted!");
+  };
 
   return (
     <Box className="p-4">
-      <div className="bg-[#f5f5f5] flex justify-center p-5 mb-3 rounded-md font-bold text-xl text-gray-600">
+      <div className="bg-[#dcd8d8fe] flex justify-center p-5 mb-3 rounded-md font-bold text-xl text-gray-600">
         <p className="flex gap-2 items-center ">
           Add service with details
           <span className="text-2xl">
@@ -74,7 +126,7 @@ export function Register() {
         <Grid item xs={12} className="mt-4">
           <p
             variant="h6"
-            className="mt-2 bg-[#f5f5f5]  flex items-center gap-2 justify-center p-5 mb-3 rounded-md font-bold text-xl text-gray-600"
+            className="mt-2 bg-[#dcd8d8fe]  flex items-center gap-2 justify-center p-5 mb-3 rounded-md font-bold text-xl text-gray-600"
           >
             Your Address Details
             <span className="text-2xl">
@@ -82,7 +134,9 @@ export function Register() {
             </span>{" "}
           </p>
           {/* ...address fields */}
-          <div class="bg-[#f5f5f581] border border-gray-200 rounded-md flex flex-col justify-center items-center  gap-0 py-4">
+          {/* ... (existing code) */}
+
+          <div class="bg-[#f5f5f5] border border-gray-200 rounded-md flex flex-col justify-center items-center  gap-0 py-4">
             <div class="flex gap-1">
               <span class="word-span font-semibold text-center block mb-2">
                 Archit
@@ -135,34 +189,48 @@ export function Register() {
       </Grid>
       <div className="container">
         <div className="invoice-details">
-        <p
+          <p
             variant="h6"
-            className="mb-2 mt-5 bg-[#f5f5f5] flex items-center gap-2 justify-center p-5 mb-3 rounded-md font-bold text-xl text-gray-600"
+            className="mb-2 mt-5 bg-[#dcd8d8fe] flex items-center gap-2 justify-center p-5 mb-3 rounded-md font-bold text-xl text-gray-600"
           >
-           Invoice Details
+            Invoice Details
             <span className="text-2xl">
               <LiaFileInvoiceDollarSolid />
             </span>{" "}
-          </p>  </div>
+          </p>{" "}
+        </div>
 
-        <div className="referral-code-input">
-          <div
-            className="referral-code-button mx-2"
-            onClick={() => {
-              /* Handle referral code input */
-            }}
-          >
-            Having a referral? <button className="text-gray-500 hover:to-blue-500">Click here </button> to enter your referral code.
+        <div className="referral-code-input flex flex-col justify-center items-center">
+          <div className="referral-code-button mx-2 text-sm transition-all duration-200 ">
+            Having a referral?{" "}
+            <button
+              onClick={() => {
+                /* Handle referral code input */
+                setIsReferralOpenHandler();
+              }}
+              className="text-blue-500 hover:to-blue-500 transition-all duration-200 "
+            >
+              Click here{" "}
+            </button>{" "}
+            to enter your referral code.
           </div>
+
+          {isreferralOpen && (
+            <input
+              type="number"
+              placeholder="Referral Code"
+              className="w-full flex items-center justify-center py-2 px-3 mx-2 my-1 rounded-md border border-gray-300 "
+            />
+          )}
           {/* Add referral code input field here (if applicable) */}
         </div>
 
         <div className="payment-options">
-        <p
+          <p
             variant="h6"
-            className=" my-2 mt-4 bg-[#f5f5f5] flex items-center gap-2 justify-center p-5 mb-3 rounded-md font-bold text-xl text-gray-600"
+            className=" my-2 mt-4 bg-[#dcd8d8fe] flex items-center gap-2 justify-center p-5 mb-3 rounded-md font-bold text-xl text-gray-600"
           >
-           Payment Options  
+            Payment Options
             <span className="text-2xl">
               <MdPayment />
             </span>{" "}
@@ -173,10 +241,233 @@ export function Register() {
               /* Handle UPI payment logic */
             }}
           >
-            Pay Via UPI <img src="upi_icon.webp" alt="upi_icon" width={35}/>
+            Pay Via UPI <img src="upi_icon.webp" alt="upi_icon" width={35} />
           </button>
         </div>
       </div>
+
+      <div className="bg-[#dcd8d8fe] flex justify-center p-5 mb-3 rounded-md font-bold text-xl text-gray-600 mt-4">
+        <button
+          className="flex gap-2 items-center "
+          onClick={() => setAddressOpenHandler()}
+        >
+          Add address details
+          <span className="text-2xl">
+            {isAddressOpen ? <IoMdRemoveCircleOutline /> : <FiPlusCircle />}
+          </span>
+        </button>
+      </div>
+
+      {isAddressOpen && (
+        <div className="  rounded-md p-1 ">
+          <div className="mb-2">
+            <label
+              htmlFor="reachablePerson"
+              className="block text-sm font-medium text-gray-600"
+            >
+              Reachable Person
+            </label>
+            <input
+              type="text"
+              id="reachablePerson"
+              className="mt-1 p-2 w-full border rounded-md"
+              value={reachablePerson}
+              onChange={(e) => setReachablePerson(e.target.value)}
+            />
+          </div>
+
+          <div className="mb-2">
+            <label
+              htmlFor="reachableNumber"
+              className="block text-sm font-medium text-gray-600"
+            >
+              Reachable Number
+            </label>
+            <input
+              type="number"
+              id="reachableNumber"
+              className="mt-1 p-2 w-full border rounded-md"
+              value={reachableNumber}
+              onChange={(e) => setReachableNumber(e.target.value)}
+            />
+          </div>
+
+          <div className="flex  gap-2">
+            <div className="mb-2">
+              <label
+                htmlFor="pincode"
+                className="block text-sm font-medium text-gray-600"
+              >
+                Pincode
+              </label>
+              <input
+                type="number"
+                id="pincode"
+                className="mt-1 p-2 w-full border rounded-md"
+                value={pincode}
+                onChange={handlePincodeChange}
+              />
+            </div>
+
+            <div className="mb-2">
+              <label
+                htmlFor="postoffice"
+                className="block text-sm font-medium text-gray-600"
+              >
+                Post Office
+              </label>
+              <input
+                type="text"
+                id="postoffice"
+                className="mt-1 p-2 w-full border rounded-md"
+                value={postoffice}
+                // readOnly
+              />
+            </div>
+          </div>
+
+          <div className="flex gap-2">
+            <div className="mb-2">
+              <label
+                htmlFor="city"
+                className="block text-sm font-medium text-gray-600"
+              >
+                City
+              </label>
+              <input
+                type="text"
+                id="city"
+                className="mt-1 p-2 w-full border rounded-md"
+                value={city}
+                // readOnly
+              />
+            </div>
+
+            <div className="mb-2">
+              <label
+                htmlFor="district"
+                className="block text-sm font-medium text-gray-600"
+              >
+                District
+              </label>
+              <input
+                type="text"
+                id="district"
+                className="mt-1 p-2 w-full border rounded-md"
+                value={district}
+                // readOnly
+              />
+            </div>
+          </div>
+          <div className="mb-3">
+            <label
+              htmlFor="state"
+              className="block text-sm font-medium text-gray-600"
+            >
+              State
+            </label>
+            <input
+              type="text"
+              id="state"
+              className="mt-1 p-2 w-full border rounded-md"
+              value={state}
+              // readOnly
+            />
+          </div>
+
+          {showAdditionalAddressFields && (
+            <div>
+              <div>
+                {/* Complete Address */}
+                <div className="mb-3">
+                  <label
+                    htmlFor="address"
+                    className="block text-sm font-medium text-gray-600"
+                  >
+                    Complete Address
+                  </label>
+                  <input
+                    type="text"
+                    id="address"
+                    className="mt-1 p-2 w-full border rounded-md"
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
+                  />
+                </div>
+
+                {/* Building Area Details */}
+                <div className="mb-3">
+                  <label
+                    htmlFor="buildingArea"
+                    className="block text-sm font-medium text-gray-600"
+                  >
+                    Building Area Details
+                  </label>
+                  <input
+                    type="text"
+                    id="buildingArea"
+                    className="mt-1 p-2 w-full border rounded-md"
+                    value={buildingArea}
+                    onChange={(e) => setBuildingArea(e.target.value)}
+                  />
+                </div>
+
+                {/* Floor Details */}
+                <div className="mb-3">
+                  <label
+                    htmlFor="floorDetails"
+                    className="block text-sm font-medium text-gray-600"
+                  >
+                    Floor Details
+                  </label>
+                  <input
+                    type="text"
+                    id="floorDetails"
+                    className="mt-1 p-2 w-full border rounded-md"
+                    value={floorDetails}
+                    onChange={(e) => setFloorDetails(e.target.value)}
+                  />
+                </div>
+
+                {/* Landmark */}
+                <div className="mb-3">
+                  <label
+                    htmlFor="landmark"
+                    className="block text-sm font-medium text-gray-600"
+                  >
+                    Landmark
+                  </label>
+                  <input
+                    type="text"
+                    id="landmark"
+                    className="mt-1 p-2 w-full border rounded-md"
+                    value={landmark}
+                    onChange={(e) => setLandmark(e.target.value)}
+                  />
+                </div>
+              </div>
+            </div>
+          )}
+
+          <div className="flex items-center justify-center">
+            <button
+              type="button"
+              className="bg-black text-white hover:bg-white hover:border-2 hover:border-black hover:text-black transition-all duration-200 py-2 px-4 rounded-md mr-2"
+              onClick={handleCompleteAddressClick}
+            >
+              Complete Address
+            </button>
+
+            <button
+              type="button"
+              className="bg-green-500 text-white py-2 px-4 rounded-md"
+              onClick={handleSubmit}
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      )}
     </Box>
   );
 }
