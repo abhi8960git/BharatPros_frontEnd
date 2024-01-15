@@ -8,6 +8,8 @@ import { RiHome5Line } from "react-icons/ri";
 import { LiaFileInvoiceDollarSolid } from "react-icons/lia";
 import { MdAddCircleOutline, MdPayment, MdRemoveCircle } from "react-icons/md";
 import { IoMdRemoveCircleOutline } from "react-icons/io";
+import ImageInput from "./imageInput";
+import Invoice from "./Invoice";
 
 export function Register() {
   // State variables for form fields
@@ -468,6 +470,13 @@ export function Register() {
           </div>
         </div>
       )}
+
+      <ImageInput />
+      <div className="flex justify-center items-center w-full">
+
+      <Invoice/>
+      </div>
+
     </Box>
   );
 }
