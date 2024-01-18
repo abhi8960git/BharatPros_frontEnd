@@ -10,6 +10,8 @@ import { MdAddCircleOutline, MdPayment, MdRemoveCircle } from "react-icons/md";
 import { IoMdRemoveCircleOutline } from "react-icons/io";
 import ImageInput from "./imageInput";
 import Invoice from "./Invoice";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 export function Register() {
   // State variables for form fields
@@ -155,10 +157,10 @@ export function Register() {
               <span class="word-span font-normal text-center block mb-2">
                 Post
               </span>
-              <span class="word-span font-normal text-center block mb-2">
+              <span class="word-span font-normal text-center block ">
                 Office:
               </span>
-              <span class="word-span font-normal text-center block mb-2">
+              <span class="word-span font-normal text-center block ">
                 Bhanala
               </span>
             </div>
@@ -285,12 +287,21 @@ export function Register() {
             >
               Reachable Number
             </label>
-            <input
+            {/* <input
               type="number"
               id="reachableNumber"
               className="mt-1 p-2 w-full border rounded-md"
               value={reachableNumber}
               onChange={(e) => setReachableNumber(e.target.value)}
+            />  */}
+
+            <PhoneInput
+              // containerStyle={{ backgroundColor: "lightgray" }}
+              buttonStyle={{border: "1px solid #e4e4e4" }}
+              inputStyle={{ padding: "20px", paddingInline:"50px" ,border: "1px solid #e4e4e4"  , width:"100%"}}
+              country={"us"}
+              // value={this.state.phone}
+              // onChange={(phone) => this.setState({ phone })}
             />
           </div>
 
@@ -473,10 +484,8 @@ export function Register() {
 
       <ImageInput />
       <div className="flex justify-center items-center w-full">
-
-      <Invoice/>
+        <Invoice />
       </div>
-
     </Box>
   );
 }

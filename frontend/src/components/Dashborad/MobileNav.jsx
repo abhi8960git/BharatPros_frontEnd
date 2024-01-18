@@ -8,8 +8,7 @@ import { CgLogOut, CgProfile, CgWorkAlt } from "react-icons/cg";
 import { MdOutlineWorkHistory } from "react-icons/md";
 import { AiFillAmazonCircle } from "react-icons/ai";
 import MobileUserSideNav from "../MobileUserSideNav";
-
-
+import { Link } from "react-router-dom";
 
 
 export default function SimpleBottomNavigation() {
@@ -45,10 +44,14 @@ export default function SimpleBottomNavigation() {
           }}
           style={{ textDecorationColor: "black" }}
         >
-          <BottomNavigationAction
+         
+         <BottomNavigationAction
             label="Home"
             icon={<img src="home_icon.svg" alt="home_icon" />}
+            LinkComponent={Link}
+            to="/hotels"
           />
+       
 
           <BottomNavigationAction
             label="Register"

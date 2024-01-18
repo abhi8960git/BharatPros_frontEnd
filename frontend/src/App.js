@@ -9,7 +9,7 @@ import { Register } from "./components/registerPage";
 function App() {
   return (
     <>
-      <Router>
+      {/* <Router> */}
         <Routes>
           <Route path="/" Component={Home} />
         </Routes>
@@ -19,7 +19,7 @@ function App() {
           <Route path="/jobs" Component={jobs}/>
           <Route path="/register" Component={Register}/>
         </Routes>
-      </Router>
+      {/* </Router> */}
     </>
   );
 }

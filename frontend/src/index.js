@@ -13,18 +13,20 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <>
-      <div className="w-full">
-        <div className="">
-          <Navitems />
-        </div>
-        <NextUIProvider>
-          <App></App>
-        </NextUIProvider>
+      <Router>
+        <div className="w-full">
+          <div className="">
+            <Navitems />
+          </div>
+          <NextUIProvider>
+            <App></App>
+          </NextUIProvider>
 
-        <div className="">
-          <SimpleBottomNavigation />
+          <div className="">
+            <SimpleBottomNavigation />
+          </div>
         </div>
-      </div>
+      </Router>
     </>
   </React.StrictMode>
 );
