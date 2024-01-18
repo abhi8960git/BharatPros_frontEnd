@@ -12,6 +12,7 @@ import ImageInput from "./imageInput";
 import Invoice from "./Invoice";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import SearchComponent from "./Dashborad/SearchComponent";
 
 export function Register() {
   // State variables for form fields
@@ -153,10 +154,8 @@ export function Register() {
               </span>
             </div>
 
-            <div class="flex gap-1">
-              <span class="word-span font-normal text-center block mb-2">
-                Post
-              </span>
+            <div class="flex gap-1 text-[0.8em]">
+              <span class="word-span font-normal text-center block ">Post</span>
               <span class="word-span font-normal text-center block ">
                 Office:
               </span>
@@ -165,26 +164,26 @@ export function Register() {
               </span>
             </div>
 
-            <div class="flex gap-1">
-              <span class="word-span font-normal text-center block mb-2">
+            <div class="flex gap-1 text-[0.8em]">
+              <span class="word-span font-normal text-center block ">
                 Shahpur
               </span>
-              <span class="word-span font-normal text-center block mb-2">
+              <span class="word-span font-normal text-center block ">
                 Kangra,
               </span>
-              <span class="word-span font-normal text-center block mb-2">
+              <span class="word-span font-normal text-center block">
                 Himachal
               </span>
-              <span class="word-span font-normal text-center block mb-2">
+              <span class="word-span font-normal text-center block ">
                 Pradesh
               </span>
             </div>
 
-            <div class="flex  gap-1">
-              <span class="word-span font-normal text-center block mb-2">
+            <div class="flex  gap-1 text-[0.8em]">
+              <span class="word-span font-normal text-center block ">
                 Pincode:
               </span>
-              <span class="word-span font-normal text-center block mb-2">
+              <span class="word-span font-normal text-center block ">
                 176206
               </span>
             </div>
@@ -264,6 +263,16 @@ export function Register() {
 
       {isAddressOpen && (
         <div className="  rounded-md p-1 ">
+          <Grid item xs={12} sm={6}>
+            <Autocomplete
+              options={services}
+              onChange={(event, newValue) => setSelectedService(newValue)}
+              className="mb-2"
+              renderInput={(params) => (
+                <TextField {...params} label="Search..." variant="outlined" />
+              )}
+            />
+          </Grid>
           <div className="mb-2">
             <label
               htmlFor="reachablePerson"
@@ -297,8 +306,13 @@ export function Register() {
 
             <PhoneInput
               // containerStyle={{ backgroundColor: "lightgray" }}
-              buttonStyle={{border: "1px solid #e4e4e4" }}
-              inputStyle={{ padding: "20px", paddingInline:"50px" ,border: "1px solid #e4e4e4"  , width:"100%"}}
+              buttonStyle={{ border: "1px solid #e4e4e4" }}
+              inputStyle={{
+                padding: "20px",
+                paddingInline: "50px",
+                border: "1px solid #e4e4e4",
+                width: "100%",
+              }}
               country={"us"}
               // value={this.state.phone}
               // onChange={(phone) => this.setState({ phone })}
