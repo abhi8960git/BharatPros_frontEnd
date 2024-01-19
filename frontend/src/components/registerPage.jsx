@@ -34,6 +34,8 @@ export function Register() {
   const [district, setDistrict] = useState("");
   const [state, setState] = useState("");
 
+  const [availablePostOffices, setAvailablePostOffices] = useState([]);
+
   const [showAdditionalAddressFields, setShowAdditionalAddressFields] =
     useState(false);
   const [buildingDetails, setBuildingDetails] = useState("");
@@ -50,18 +52,19 @@ export function Register() {
 
   const handlePincodeChange = (e) => {
     const enteredPincode = e.target.value;
-    const pincodeData = {
-      postoffice: "Sample Post Office",
-      city: "Sample City",
-      district: "Sample District",
-      state: "Sample State",
-    };
-
     setPincode(enteredPincode);
-    setPostoffice(pincodeData.postoffice);
-    setCity(pincodeData.city);
-    setDistrict(pincodeData.district);
-    setState(pincodeData.state);
+    const postOfficeData = {
+      110001: ["Connaught Place", "Janpath", "Barakhamba Road"],
+      110002: ["Indraprastha", "Civil Lines", "Model Town"],
+      // Add more entries as needed
+    };
+    setAvailablePostOffices(postOfficeData[enteredPincode] || []);
+
+    // setPincode(enteredPincode);
+    // setPostoffice(pincodeData.postoffice);
+    // setCity(pincodeData.city);
+    // setDistrict(pincodeData.district);
+    // setState(pincodeData.state);
   };
 
   const handleCompleteAddressClick = () => {
@@ -319,7 +322,8 @@ export function Register() {
             />
           </div>
 
-          <div className="flex  gap-2">
+          <div className="flex gap-2">
+            {/* Pincode input */}
             <div className="mb-2">
               <label
                 htmlFor="pincode"
@@ -343,13 +347,21 @@ export function Register() {
               >
                 Post Office
               </label>
-              <input
-                type="text"
+              <select
                 id="postoffice"
                 className="mt-1 p-2 w-full border rounded-md"
                 value={postoffice}
-                // readOnly
-              />
+                onChange={(e) => setPostoffice(e.target.value)}
+              >
+                <option value="" disabled>
+                  Select Post Office
+                </option>
+                {availablePostOffices.map((office) => (
+                  <option key={office} value={office}>
+                    {office}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
 
@@ -357,16 +369,16 @@ export function Register() {
             <div className="mb-2">
               <label
                 htmlFor="city"
-                className="block text-sm font-medium text-gray-600"
+                className="   block text-sm font-medium text-gray-600"
               >
                 City
               </label>
               <input
                 type="text"
                 id="city"
-                className="mt-1 p-2 w-full border rounded-md"
+                className=" bg-[#f5f5f5] mt-1 p-2 w-full border rounded-md"
                 value={city}
-                // readOnly
+                readOnly
               />
             </div>
 
@@ -380,9 +392,9 @@ export function Register() {
               <input
                 type="text"
                 id="district"
-                className="mt-1 p-2 w-full border rounded-md"
+                className=" bg-[#f5f5f5] mt-1 p-2 w-full border rounded-md"
                 value={district}
-                // readOnly
+                readOnly
               />
             </div>
           </div>
@@ -396,9 +408,9 @@ export function Register() {
             <input
               type="text"
               id="state"
-              className="mt-1 p-2 w-full border rounded-md"
+              className=" bg-[#f5f5f5] mt-1 p-2 w-full border rounded-md"
               value={state}
-              // readOnly
+              readOnly
             />
           </div>
 
