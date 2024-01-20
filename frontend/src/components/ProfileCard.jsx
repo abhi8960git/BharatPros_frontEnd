@@ -8,8 +8,8 @@ const ProfileCard = (props) => {
   const {ArrayLength} = props;
   console.log(ArrayLength);
   return (
-    <div className={`flex flex-col justify-center bg-[#f5f5f5] p-3 ${ArrayLength == 0 ? " w-[310px] mt-4" : " " } `}>
-      <div className={`relative rounded-md overflow-hidden h-[170px] ${ArrayLength == 0 ? "h-[270px]" : " "} `} >
+    <div className={`flex flex-col justify-center bg-[#f5f5f5] p-3 ${ArrayLength == 1 ? " w-[310px] mt-4" : " " } `}>
+      <div className={`relative rounded-md overflow-hidden h-[170px] ${ArrayLength == 1 ? "h-[270px]" : " "} `} >
         <img
           className="z-10 w-full h-full object-cover"
           src="/profile.jpg"
