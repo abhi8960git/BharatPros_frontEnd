@@ -1,0 +1,37 @@
+{
+    "userProfile": {
+      "username": "john_doe",
+      "level": "professional",
+      "bio": "Passionate about web development and creating amazing user experiences.",
+      "skills": ["HTML", "CSS", "JavaScript", "React", "Node.js", "MongoDB"],
+      "experience": [
+        {
+          "position": "Frontend Developer",
+          "company": "Tech Solutions Inc.",
+          "duration": "Jan 2020 - Present",
+          "description": "Worked on developing user interfaces for client projects using React."
+        },
+        {
+          "position": "Junior Developer",
+          "company": "Code Innovators",
+          "duration": "May 2018 - Dec 2019",
+          "description": "Contributed to various web development projects and gained hands-on experience."
+        }
+      ],
+      "education": [
+        {
+          "institution": "ABC School",
+          "duration": "2005 - 2012",
+          "course": "High School",
+          "fieldOfStudy": "Science"
+        },
+        {
+          "institution": "XYZ College",
+          "duration": "2012 - 2016",
+          "course": "Bachelor of Science in Computer Science",
+          "fieldOfStudy": "Computer Science"
+        }
+      ]
+    }
+  }
+  

@@ -6,6 +6,7 @@ import ProfileCard from "../components/ProfileCard";
 import Search from "../components/Search";
 
 const ServiceProviders = () => {
+  const myArray = [0,1]
   return (
     <Wrapper>
       <div className="">
@@ -13,10 +14,11 @@ const ServiceProviders = () => {
           {/* <SearchComponent placeholderText="Search Hotels.." /> */}
           <Search />
         </div>
-        <div className="mt-3 grid grid-cols-2 gap-2 mx-1 ">
-          {[0, 1, 2].map((index) => (
+        <div className="flex  gap-2 justify-center  mx-1 ">
+          {myArray.map((index,e) => (
             <div key={index}>
-              <ProfileCard />
+              {/* <p>{myArray.length}</p> */}
+              <ProfileCard ArrayLength={myArray.length} />
             </div>
           ))}
         </div>

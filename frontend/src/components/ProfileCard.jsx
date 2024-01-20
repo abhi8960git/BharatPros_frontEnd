@@ -4,10 +4,12 @@ import { TbMapPinCode } from "react-icons/tb";
 import { MdLocalPhone } from "react-icons/md";
 import { FaCircleInfo } from "react-icons/fa6";
 
-const ProfileCard = () => {
+const ProfileCard = (props) => {
+  const {ArrayLength} = props;
+  console.log(ArrayLength);
   return (
-    <div className="flex flex-col bg-[#f5f5f5] p-3">
-      <div className="relative rounded-md overflow-hidden h-[170px]">
+    <div className={`flex flex-col justify-center bg-[#f5f5f5] p-3 ${ArrayLength == 0 ? " w-[310px] mt-4" : " " } `}>
+      <div className={`relative rounded-md overflow-hidden h-[170px] ${ArrayLength == 0 ? "h-[270px]" : " "} `} >
         <img
           className="z-10 w-full h-full object-cover"
           src="/profile.jpg"
@@ -31,17 +33,10 @@ const ProfileCard = () => {
             Solan,Himachal Pradesh{" "}
           </p>
         </div>
-        <div className="flex gap-1 justify-start">
-          <span>
-            <TbMapPinCode />
-          </span>
-          <p className="text-[0.7em] text-gray-500 flex items-center gap-1 ">
-            Pincode-948504
-          </p>
-        </div>
+        
 
-        <p className="text-[0.9em] font-[600]">Chartered Accountant</p>
-        <p className="text-[0.8em] text-gray-500">Satyam Kumar Gupta </p>
+        <p className="text-[0.8em] font-[600]">Chartered Accountant</p>
+        <p className="text-[0.7em] text-gray-500">Satyam Kumar Gupta </p>
       </div>
     </div>
   );
