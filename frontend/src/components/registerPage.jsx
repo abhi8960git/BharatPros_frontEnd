@@ -190,6 +190,9 @@ export function Register() {
                 176206
               </span>
             </div>
+            <div className="my-2">
+              <button className=" text-sm bg-black/10 p-2 rounded-full text-black px-4 active:scale-105 duration-200 shadow-sm border border-black/10">Confirm Address</button>
+            </div>
           </div>
         </Grid>
       </Grid>
