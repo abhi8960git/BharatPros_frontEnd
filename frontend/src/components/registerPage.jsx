@@ -82,6 +82,7 @@ export function Register() {
   return (
     <Box className="p-4">
       <div className="bg-[#dcd8d8fe] flex justify-center p-5 mb-3 rounded-md font-bold text-xl text-gray-600">
+        
         <p className="flex gap-2 items-center ">
           Add service with details
           <span className="text-2xl">

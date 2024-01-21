@@ -1,9 +1,9 @@
 {
     "userProfile": {
-      "username": "Ritik Gupta",
+      "username": "Abhishek Kumar",
       "level": "professional",
       "bio": "Passionate about web development and creating amazing user experiences.",
-      "skills": ["HTML", "CSS", "JavaScript", "React", "Node.js", "MongoDB"],
+      "skills": ["HTML", "CSS", "JavaScript", "React", "Node.js", "MongoDB","HTML", "CSS", "JavaScript", "React", "Node.js", "MongoDB"],
       "experience": [
         {
           "position": "Frontend Developer",

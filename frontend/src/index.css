@@ -24,3 +24,7 @@ body {
 }
 
 /* search css */
+.gradient{
+  background: rgb(238,179,116);
+  background: linear-gradient(180deg, rgba(238,179,116,0.8637413394919169) 32%, rgba(10,137,1,1) 100%);
+}
