@@ -3,11 +3,18 @@ import userProfileData from "./userProfile.json"; // Rename the variable to avoi
 import { LuCircleDot } from "react-icons/lu";
 import ServicesCard from "../ServicesCard";
 import { FaPlus } from "react-icons/fa6";
+import { CiCircleMinus } from "react-icons/ci";
+
+import { CiAirportSign1, CiCirclePlus } from "react-icons/ci";
+import ProfessionalServiceCard from "../ProfessionalServiceCard";
+
 const UserProfile = () => {
   const [open, setOpen] = useState(false);
   const [openSkill, setOpenSkill] = useState(false);
   const [openExperience, setOpenExperience] = useState(false);
   const [openEducation, setOpenEducation] = useState(false);
+  const [addExperience, SetAddExperience] = useState(false);
+  const [addEducation, SetAddEducation] = useState(false);
 
   // Access data from the JSON file
   const { username, level, bio, skills, experience, education } =
@@ -26,9 +33,16 @@ const UserProfile = () => {
     setOpenEducation(!openEducation);
   };
 
+  const AddExperienceHandler = () => {
+    SetAddExperience(!addExperience);
+  };
+  const AddEducationHandler = () => {
+    SetAddEducation(!addEducation);
+  };
+
   return (
     <div className="flex gap-2 flex-col">
-      <div className="bg-black/10 h-[150px]  rounded-b-full relative">
+      <div className="bg-black/10  h-[150px] -mt-3  rounded-b-full relative">
         <p className="text-md font-semibold py-1 text-3xl absolute left-1/2 transform -translate-x-1/2 top-3 w-full text-center text-black/70">
           {username}
         </p>
@@ -54,8 +68,10 @@ const UserProfile = () => {
               {level}
             </p>
           </div>
-          <div className=" mx-2 py-1  ">
-            <p className="text-sm text-gray-600">{bio}</p>
+          <div className=" mx-2 py-1 ">
+            <p className="text-[0.8em] text-gray-800  py-2 tracking-normal ">
+              {bio}
+            </p>
           </div>
         </div>
 
@@ -71,9 +87,11 @@ const UserProfile = () => {
           </div>
 
           {open && (
-            <div className="flex  flex-wrap mx-2 p-2 gap-2">
+            <div className="flex  flex-wrap mx-2 p-2 gap-3 py-42">
               {skills.map((e, index) => (
-                <p className="text-sm p-1 px-2 rounded-full bg-blue-200">{e}</p>
+                <p className="text-sm p-2 px-3  rounded-full bg-blue-100">
+                  {e}
+                </p>
               ))}
             </div>
           )}
@@ -92,16 +110,26 @@ const UserProfile = () => {
           {openExperience && (
             <ul className="mx-2 py-2 ">
               {experience.map((exp, index) => (
-                <div className="flex item-start gap-2  ">
+                <div className="flex item-start gap-2 border-b border-black/10 ">
                   <span className="mt-1  text-gray-500 text-sm">
-                    <LuCircleDot />
+                    {/* <LuCircleDot /> */}
                   </span>
-                  <li key={index} className="text-[0.8em] py-[1px]">
+                  <li key={index} className="text-[0.8em] py-[10px]">
                     {exp.position} at {exp.company}{" "}
                     <span className="text-gray-600">({exp.duration})</span>
                   </li>
                 </div>
               ))}
+
+              <div
+                className="flex  items-center justify-center item-start  gap-2 py-3 bg-black/10 active:scale-[1.015] transitions-all duration-400 "
+                onClick={AddExperienceHandler}
+              >
+                <li className="text-lg">Add Experience</li>
+                {addExperience ? <span className="text-2xl"><CiCircleMinus/></span> : <span className="text-2xl"><CiCirclePlus /></span> }
+              </div>
+
+              {addExperience && <div className="overflow-hidden transition-all duration-500 max-h-40">kldj</div>}
             </ul>
           )}
         </div>
@@ -119,11 +147,11 @@ const UserProfile = () => {
           {openEducation && (
             <ul className="mx-2 py-2 ">
               {education.map((edu, index) => (
-                <div className="flex item-start gap-2  ">
+                <div className="flex item-start gap-2 border-b border-black/10  ">
                   <span className="mt-[0.2em] text-gray-500 text-sm">
-                    <LuCircleDot />
+                    {/* <LuCircleDot /> */}
                   </span>
-                  <li key={index} className="text-[0.8em] py-[1px]">
+                  <li key={index} className="text-[0.8em] py-[10px]">
                     <span className="text-gray-600">
                       {edu.institution} ({edu.duration})
                     </span>{" "}
@@ -131,11 +159,18 @@ const UserProfile = () => {
                   </li>
                 </div>
               ))}
+              <div className="flex  items-center justify-center item-start  gap-2 py-3 bg-black/10 active:scale-[1.015] transitions-all duration-400 ">
+                <li className="text-lg">Add Education</li>
+                <span className="text-2xl">
+                  <CiCirclePlus />
+                </span>
+              </div>
             </ul>
           )}
         </div>
       </div>
-      {/* <ServicesCard/> */}
+      <ServicesCard />
+      <ProfessionalServiceCard/>
     </div>
   );
 };
