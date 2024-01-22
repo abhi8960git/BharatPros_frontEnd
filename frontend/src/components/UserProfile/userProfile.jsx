@@ -7,6 +7,9 @@ import { CiCircleMinus } from "react-icons/ci";
 
 import { CiAirportSign1, CiCirclePlus } from "react-icons/ci";
 import ProfessionalServiceCard from "../ProfessionalServiceCard";
+import UserProfileInformation from "../UserProfileInformation";
+import AddExperiencePage from "../AddExperiencePage";
+import AddEducationPage from "../AddEducationPage";
 
 const UserProfile = () => {
   const [open, setOpen] = useState(false);
@@ -171,6 +174,11 @@ const UserProfile = () => {
       </div>
       <ServicesCard />
       <ProfessionalServiceCard/>
+
+      <UserProfileInformation/>
+
+      <AddExperiencePage/>
+      <AddEducationPage/>
     </div>
   );
 };
