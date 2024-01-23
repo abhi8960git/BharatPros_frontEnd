@@ -10,7 +10,7 @@ const ServicesCard = () => {
           Abhishek kumar
         </p>
         <p className="absolute text-xs rounded-full shadow-xs top-1 right-2 bg-green-300 py-1 px-2 text-gray-700 ">Payment status : success </p>
-        <p className="absolute text-xs rounded-full shadow-xs top-1 left-2 py-1 px-2 text-gray-700 border border-gray-300 px-4 ">Active till - 2-12-2024 </p>
+        <p className="absolute text-xs rounded-full shadow-xs top-1 left-2 py-1 px-2 text-gray-700 border border-gray-300 px-4 ">Active till - 0.2em2-12-2024 </p>
         <p className="text-center text-xs py-1 text-black/60">
         Architects - Residenial
         </p>

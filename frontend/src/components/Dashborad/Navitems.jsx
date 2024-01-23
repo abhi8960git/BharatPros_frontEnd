@@ -42,7 +42,7 @@ const Navitems = () => {
 
   return (
     <>
-      <div className="bg-zinc-100 shadow-sm flex justify-between px-3 items-center py-3 z-40">
+      <div className="bg-zinc-100 shadow-sm flex justify-between px-3 items-center py-3 z-40 sticky">
         <div className="flex items-center justify-center gap-1">
           {/* <h1 className="text-sm font-bold text-[#111111]">Himachal Pradesh</h1>
           <span className=" text-[12px] flex items-center gap-1 ml-[2px] cursor-pointer ">
