@@ -1,21 +1,22 @@
-import React, { Fragment, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Fragment, useState } from "react";
+import { Link } from "react-router-dom";
 
 // Import the common styling from AddExperiencePage
 // import './AddExperiencePage.css';
 
 const AddEducationPage = () => {
   const [formData, setFormData] = useState({
-    school: '',
-    degree: '',
-    fieldofstudy: '',
-    from: '',
-    to: '',
+    school: "",
+    degree: "",
+    fieldofstudy: "",
+    from: "",
+    to: "",
     current: false,
-    description: '',
+    description: "",
   });
 
-  const { school, degree, fieldofstudy, from, to, current, description } = formData;
+  const { school, degree, fieldofstudy, from, to, current, description } =
+    formData;
 
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -40,38 +41,61 @@ const AddEducationPage = () => {
           // addEducation(formData, history);
         }}
       >
-        <div className="mx-2  px-2  py-1 flex gap-2 border-2 border-black/10 mt-2">
+        <div className="flex flex-col mx-2 py-1 gap-2 mt-1">
+          <label
+            htmlFor="school"
+            className="block text-sm font-medium text-gray-600"
+          >
+            Add Your School or Bootcamp
+          </label>
           <input
             type="text"
+            id="school"
             placeholder="* School or Bootcamp"
             name="school"
             value={school}
             onChange={onChange}
             required
-            className="outline-none"
+            className="outline-none border-2 border-black/10 w-full px-2 py-1"
           />
         </div>
-        <div className="mx-2  px-2  py-1 flex gap-2 border-2 border-black/10 mt-2">
+
+        <div className="flex flex-col mx-2 py-1 gap-2 mt-1">
+          <label
+            htmlFor="degree"
+            className="block text-sm font-medium text-gray-600"
+          >
+            Add Your Degree or Certificate
+          </label>
           <input
             type="text"
+            id="degree"
             placeholder="* Degree or Certificate"
             name="degree"
             value={degree}
             onChange={onChange}
             required
-            className="outline-none"
+            className="outline-none border-2 border-black/10 w-full px-2 py-1"
           />
         </div>
-        <div className="mx-2  px-2  py-1 flex gap-2 border-2 border-black/10 mt-2">
+
+        <div className="flex flex-col mx-2 py-1 gap-2 mt-1">
+          <label
+            htmlFor="fieldofstudy"
+            className="block text-sm font-medium text-gray-600"
+          >
+            Add Your Field of Study
+          </label>
           <input
             type="text"
             placeholder="Field of Study"
             name="fieldofstudy"
             value={fieldofstudy}
             onChange={onChange}
-            className="outline-none"
+            className="outline-none border-2 border-black/10 w-full px-2 py-1"
           />
         </div>
+
         <div className="flex  w-full justify-center gap-2 mt-3">
           <div className="">
             <h4>* From Date</h4>
@@ -107,7 +131,7 @@ const AddEducationPage = () => {
               setFormData({ ...formData, current: !current });
             }}
             className="mx-3 mt-4 text-gray-600"
-          />{' '}
+          />{" "}
           Current School
         </p>
         <div className="flex flex-col gap-2 mx-2 ">

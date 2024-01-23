@@ -37,7 +37,7 @@ const AddExperiencePage = () => {
           // addExperience(formData, history);
         }}
       >
-        <div className="flex flex-col mx-2  py-1 gap-2 mt-2">
+        <div className="flex flex-col mx-2  py-1 gap-2 mt-1">
           <label
             htmlFor="title"
             className="block text-sm font-medium text-gray-600"
@@ -56,7 +56,7 @@ const AddExperiencePage = () => {
           />
         </div>
 
-        <div className="flex flex-col mx-2  py-1 gap-2 mt-2">
+        <div className="flex flex-col mx-2  py-1 gap-2 mt-1">
           <label
             htmlFor="company"
             className="block text-sm font-medium text-gray-600"
@@ -75,7 +75,7 @@ const AddExperiencePage = () => {
           />
         </div>
 
-        <div className="flex flex-col mx-2  py-1 gap-2 mt-2">
+        <div className="flex flex-col mx-2  py-1 gap-2 mt-1">
           <label
             htmlFor="location"
             className="block text-sm font-medium text-gray-600"
