@@ -37,38 +37,61 @@ const AddExperiencePage = () => {
           // addExperience(formData, history);
         }}
       >
-        <div className="mx-2  px-2  py-1 flex gap-2 border-2 border-black/10 mt-2">
+        <div className="flex flex-col mx-2  py-1 gap-2 mt-2">
+          <label
+            htmlFor="title"
+            className="block text-sm font-medium text-gray-600"
+          >
+            Add Your Job title
+          </label>
           <input
             type="text"
+            id="title"
             placeholder="* Job Title"
             name="title"
             value={title}
             onChange={onChange}
             required
-            className="outline-none"
+            className="outline-none border-2 border-black/10 w-full px-2 py-1"
           />
         </div>
-        <div className="mx-2  px-2  py-1 flex gap-2 border-2 border-black/10 mt-2">
+
+        <div className="flex flex-col mx-2  py-1 gap-2 mt-2">
+          <label
+            htmlFor="company"
+            className="block text-sm font-medium text-gray-600"
+          >
+            Add Your Company
+          </label>
           <input
             type="text"
+            id="company"
             placeholder="* Company"
             name="company"
             value={company}
             onChange={onChange}
             required
-            className="outline-none"
+            className="outline-none border-2 border-black/10 py-1 px-2"
           />
         </div>
-        <div className="mx-2  px-2  py-1 flex gap-2 border-2 border-black/10 mt-2">
+
+        <div className="flex flex-col mx-2  py-1 gap-2 mt-2">
+          <label
+            htmlFor="location"
+            className="block text-sm font-medium text-gray-600"
+          >
+            Add Your Location
+          </label>
           <input
             type="text"
             placeholder="Location"
             name="location"
             value={location}
             onChange={onChange}
-            className="outline-none"
+            className="outline-none border-2 border-black/10 py-1 px-2"
           />
         </div>
+
         <div className="flex  w-full justify-center gap-2 mt-3">
           <div className="">
             <h4>* From Date</h4>
@@ -77,7 +100,7 @@ const AddExperiencePage = () => {
               name="from"
               value={from}
               onChange={onChange}
-              className="  px-2  py-1 flex gap-2 border-2 border-black/10 "
+              className="  px-2  py-1 flex gap-2 border-2 border-black/10  "
             />
           </div>
 
