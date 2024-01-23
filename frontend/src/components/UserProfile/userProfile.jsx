@@ -114,9 +114,7 @@ const UserProfile = () => {
             <ul className="mx-2 py-2 ">
               {experience.map((exp, index) => (
                 <div className="flex item-start gap-2 border-b border-black/10 ">
-                  <span className="mt-1  text-gray-500 text-sm">
-                    {/* <LuCircleDot /> */}
-                  </span>
+                
                   <li key={index} className="text-[0.8em] py-[10px]">
                     {exp.position} at {exp.company}{" "}
                     <span className="text-gray-600">({exp.duration})</span>

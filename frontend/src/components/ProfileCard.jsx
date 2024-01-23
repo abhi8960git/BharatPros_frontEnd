@@ -19,8 +19,10 @@ const ProfileCard = (props) => {
           <span className=" z-30 flex items-center justify-center bg-white rounded-full p-2 hover:bg-blue-400">
             <MdLocalPhone className="text-black" />
           </span>
-          <span className=" right-2 z-30 flex items-center justify-center bg-white rounded-full p-2 hover:bg-blue-400">
-            <FaCircleInfo className="text-black" />
+          <span className=" right-2 z-30 flex w-[6em] items-center justify-center bg-white rounded-full p-2 hover:bg-blue-400">
+            <FaCircleInfo className="text-black" /><span className="text-[0.6em] ml-1 ">
+            View Profile
+            </span>
           </span>
         </div>
       </div>
