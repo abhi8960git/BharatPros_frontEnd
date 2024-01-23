@@ -10,6 +10,8 @@ import ProfessionalServiceCard from "../ProfessionalServiceCard";
 import UserProfileInformation from "../UserProfileInformation";
 import AddExperiencePage from "../AddExperiencePage";
 import AddEducationPage from "../AddEducationPage";
+import ProfileEducation from "../ProfileEducation";
+import CreateProfile from "../CreateProfile";
 
 const UserProfile = () => {
   const [open, setOpen] = useState(false);
@@ -177,6 +179,9 @@ const UserProfile = () => {
 
       <AddExperiencePage/>
       <AddEducationPage/>
+      <ProfileEducation/>
+      <CreateProfile/>
+      
     </div>
   );
 };

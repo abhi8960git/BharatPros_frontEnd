@@ -6,7 +6,6 @@ import { Modal } from "antd";
 import { MdLogin } from "react-icons/md";
 import { MuiTelInput } from "mui-tel-input";
 import { Input } from "@mui/material";
-
 const Navitems = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -44,19 +43,24 @@ const Navitems = () => {
   return (
     <>
       <div className="bg-zinc-100 shadow-sm flex justify-between px-3 items-center py-3 z-40">
-        <div>
-          <h1 className="text-sm font-bold text-[#111111]">Himachal Pradesh</h1>
+        <div className="flex items-center justify-center gap-1">
+          {/* <h1 className="text-sm font-bold text-[#111111]">Himachal Pradesh</h1>
           <span className=" text-[12px] flex items-center gap-1 ml-[2px] cursor-pointer ">
             {" "}
             Chamba
             <IoIosArrowDown />
-          </span>
+          </span> */}
+
+          <img src="bharatPros_logo.png" alt="bharat_pros" width={22} />
+          <div className="mt-2">
+            <p className="text-gradient text-xl font-extrabold ">BharatPros</p>
+          </div>
         </div>
         <span className="text-3xl cursor-pointer" onClick={toggleMobileMenu}>
           {/* <GiHamburgerMenu /> */}
         </span>
         <button
-          className=" flex items-center justify-center gap-1 border-[1px] border-black px-3 py-1 rounded-[5px] shadow hover:bg-black hover:text-white transition-all duration-200"
+          className=" flex items-center justify-center gap-1 bg-blue-400 px-3 py-1 rounded-[5px] shadow text-white transition-all duration-200"
           onClick={showModal}
         >
           Login / SignUp
@@ -118,7 +122,7 @@ const Navitems = () => {
               className=" col-span-7 outline-blue-600 text-[15px] border border-zinc-300 rounded-[4px] px-[9px] text-md py-[7px] "
             />
             <button className=" col-span-3 border border-black px-[1em] rounded-md flex items-center justify-center gap-1 text-black hover:text-white hover:bg-black transition-all duration-200 py-[7px]">
-              Verify 
+              Verify
             </button>
           </div>
         </div>

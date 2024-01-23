@@ -9,7 +9,7 @@
 
 body {
   margin: 0;
-  font-family: 'Sora', sans-serif;
+  font-family: "Sora", sans-serif;
   /* font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, "Helvetica Neue", Oxygen-Sans, Ubuntu, Cantarell, Helvetica, Arial, sans-serif !important; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -24,7 +24,22 @@ body {
 }
 
 /* search css */
-.gradient{
-  background: rgb(238,179,116);
-  background: linear-gradient(180deg, rgba(238,179,116,0.8637413394919169) 32%, rgba(10,137,1,1) 100%);
+.gradient {
+  background: rgb(238, 179, 116);
+  background: linear-gradient(
+    180deg,
+    rgba(238, 179, 116, 0.8637413394919169) 32%,
+    rgba(10, 137, 1, 1) 100%
+  );
+}
+
+.text-gradient {
+  background-image: rgb(238, 179, 116);
+  background-image: linear-gradient(
+    52deg,
+    rgba(238, 179, 116, 0.8637413394919169) 41%,
+    rgba(10, 137, 1, 1) 100%
+  );
+  -webkit-background-clip: text; /* Clip the background to the text */
+  color: transparent;
 }
