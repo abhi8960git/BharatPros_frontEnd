@@ -14,11 +14,11 @@ const ProfileEducation = () => {
   const description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
 
   return (
-    <div className="flex item-start gap-2 border-b border-black/10 mx-2 ">
-      <li className="text-[0.8em] py-[10px] list-none ">
+    <div className="flex item-start gap-2 border-b border-black/10 mx-2  ">
+      <li className="text-[0.8em] py-[10px] list-none flex flex-col gap-[4px] ">
        <div className='flex gap-3'>
-       <h3 className="text-dark">{school}</h3>
-        <p className='font-bold'>
+       <h3 className="text-dark font-bold">{school}</h3>
+        <p className='text-gray-600'>
        ( {formatDate(from)} - {to ? formatDate(to) : 'Now'} )
         </p>
        </div>
