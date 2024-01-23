@@ -34,12 +34,8 @@ body {
 }
 
 .text-gradient {
-  background-image: rgb(238, 179, 116);
-  background-image: linear-gradient(
-    52deg,
-    rgba(238, 179, 116, 0.8637413394919169) 41%,
-    rgba(10, 137, 1, 1) 100%
-  );
+  background-image: rgb(233,131,21);
+  background-image: linear-gradient(52deg, rgba(233,131,21,0.8637413394919169) 36%, rgba(10,137,1,1) 100%);
   -webkit-background-clip: text; /* Clip the background to the text */
   color: transparent;
 }

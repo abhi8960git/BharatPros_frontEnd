@@ -53,7 +53,7 @@ const Navitems = () => {
 
           <img src="bharatPros_logo.png" alt="bharat_pros" width={22} />
           <div className="mt-2">
-            <p className="text-gradient text-xl font-extrabold ">BharatPros</p>
+            <p className="text-gradient text-lg font-semibold  ">BharatPros</p>
           </div>
         </div>
         <span className="text-3xl cursor-pointer" onClick={toggleMobileMenu}>
