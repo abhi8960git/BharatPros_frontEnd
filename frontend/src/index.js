@@ -4,27 +4,37 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Navitems from "./components/Dashborad/Navitems";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import {
+  Route,
+  BrowserRouter as Router,
+  Routes,
+  useNavigate,
+} from "react-router-dom";
 import Hotel from "./Pages/Hotel";
 import Home from "./Pages/Home";
 import SimpleBottomNavigation from "./components/Dashborad/MobileNav";
 import { NextUIProvider } from "@nextui-org/react";
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <React.StrictMode>
     <>
       <Router>
         <div className="w-full">
-          <div className="">
-            <Navitems />
-          </div>
+          {window.innerWidth <= 768 && (
+            <div className="">
+              <Navitems />
+            </div>
+          )}
           <NextUIProvider>
             <App></App>
           </NextUIProvider>
 
-          <div className="">
-            <SimpleBottomNavigation />
-          </div>
+          {window.innerWidth <= 768 && (
+            <div className="">
+              <SimpleBottomNavigation />
+            </div>
+          )}
         </div>
       </Router>
     </>

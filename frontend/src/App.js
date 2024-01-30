@@ -8,7 +8,20 @@ import jobs from "./components/jobs";
 import { Register } from "./components/registerPage";
 import UserProfile from "./components/UserProfile/userProfile.jsx";
 import NoProfessionalsFound from "./components/NoProfessionalsFound.jsx";
+import {useNavigate} from 'react-router-dom';
+import { useEffect } from "react";
+import DesktopMessage from "./components/DesktopMessage.jsx";
+
 function App() {
+  const history = useNavigate();
+  useEffect(()=>{
+    if(window.innerWidth > 768){
+      history('/desktop-message')
+    }else{
+      history('/')
+    }
+    
+  },[history])
   return (
     <>
       {/* <Router> */}
@@ -16,6 +29,7 @@ function App() {
           <Route path="/" Component={Home} />
         </Routes>
         <Routes>
+          <Route path="/desktop-message" Component={DesktopMessage}/>
           <Route path="/hotels" Component={Hotel} />
           <Route path="/service-providers" Component={ServiceProviders}/>
           <Route path="/jobs" Component={jobs}/>

@@ -24,14 +24,14 @@ const responsive = {
 const CategorySection = ({ categories }) => {
   return (
     <div className=" bg-[#f5f5f5] w-full px-2 py-1 mt-3">
-      <CustomText fontSize="text-lg ml-1">{categories[0].categoryName}</CustomText>
+      <CustomText fontSize="text-lg ml-1 ">{categories[0].categoryName}</CustomText>
       <div className="rounded-md">
         <Carousel
           swipeable={true}
-          removeArrowOnDeviceType={["mobile"]}
           dotListClass="mt-"
-          itemClass="carousel-item-padding-40-px mb-[6px]"
+          itemClass="carousel-item-padding-40-px mb-[6px] -z-30"
           responsive={responsive}
+
         >
           {categories[0].categories.map((category, index) => (
             <div

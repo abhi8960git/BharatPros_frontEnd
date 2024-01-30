@@ -26,7 +26,7 @@ export default function SimpleBottomNavigation() {
   return (
     <Box
       sx={{
-        zIndex: 40,
+        zIndex: 70,
         pb: 7,
       }}
     >
