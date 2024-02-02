@@ -6,7 +6,7 @@ const HeroBanner = () => {
 
          {/* Image 3 */}
       <div className='-mt-[62px]'>
-        <img src="Hotel3D.webp" alt="good" width={100} height={100} className=' bg-black/20 rounded-full p-2 hover:scale-95 duration-200 transition-all' />
+        <img src="Hotel3D.webp" alt="good" width={100} height={100} className=' bg-black/20 rounded-full p-2 hover:scale-95 duration-200 transition-all py-3' />
         <p className='mt-4'>Hotels</p>
       </div>
 
