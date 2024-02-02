@@ -29,7 +29,6 @@ root.render(
           <NextUIProvider>
             <App></App>
           </NextUIProvider>
-
           {window.innerWidth <= 768 && (
             <div className="">
               <SimpleBottomNavigation />

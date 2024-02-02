@@ -28,9 +28,11 @@ const CategorySection = ({ categories }) => {
       <div className="rounded-md">
         <Carousel
           swipeable={true}
-          dotListClass="mt-"
+          dotListClass="-z-40"
           itemClass="carousel-item-padding-40-px mb-[6px] -z-30"
           responsive={responsive}
+          className="-z-0"
+          
 
         >
           {categories[0].categories.map((category, index) => (

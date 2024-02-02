@@ -11,17 +11,19 @@ import NoProfessionalsFound from "./components/NoProfessionalsFound.jsx";
 import {useNavigate} from 'react-router-dom';
 import { useEffect } from "react";
 import DesktopMessage from "./components/DesktopMessage.jsx";
+import FileUpload from "./components/Dropzone.jsx";
+import DropzoneComponent from "./components/Dropzone.jsx";
 
 function App() {
-  const history = useNavigate();
-  useEffect(()=>{
-    if(window.innerWidth > 768){
-      history('/desktop-message')
-    }else{
-      history('/')
-    }
+  // const history = useNavigate();
+  // useEffect(()=>{
+  //   if(window.innerWidth > 768){
+  //     history('/desktop-message')
+  //   }else{
+  //     history('/')
+  //   }
     
-  },[history])
+  // },[history])
   return (
     <>
       {/* <Router> */}
@@ -36,6 +38,7 @@ function App() {
           <Route path="/register" Component={Register}/>
           <Route path="/userProfile" Component={UserProfile}/>
           <Route path="/error" Component={NoProfessionalsFound}/>
+          <Route path="/dropzone" Component={DropzoneComponent}/>
         </Routes>
       {/* </Router> */}
     </>
