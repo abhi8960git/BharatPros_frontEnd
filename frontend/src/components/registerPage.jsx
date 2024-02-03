@@ -253,6 +253,15 @@ export function Register() {
           >
             Pay Via UPI <img src="upi_icon.webp" alt="upi_icon" width={35} />
           </button>
+
+          <button
+            className="flex mt-2 items-center gap-2 bg-[#f5f5f581] border-2 border-gray-200 justify-center w-full py-[10px] rounded-md text-xl font-semibold "
+            onClick={() => {
+              /* Handle UPI payment logic */
+            }}
+          >
+            Register <img src="RegisterIcon.svg" alt="upi_icon" width={27} />
+          </button>
         </div>
       </div>
 
