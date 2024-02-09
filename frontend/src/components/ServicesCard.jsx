@@ -25,6 +25,8 @@ const ServicesCard = () => {
             width={100}
             height={100}
           />
+             <p className="absolute text-[9px] rounded-full  top-0.5 -right-5 bg-green-700 py-0.5 px-1 pb-1 text-white ">Unavailable</p>
+
         </div>
       </div>
       {/* service name */}

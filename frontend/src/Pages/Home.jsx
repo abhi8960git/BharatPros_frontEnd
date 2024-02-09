@@ -9,6 +9,7 @@ import Transport from "../components//Json_utils/Transportation.json";
 import Wedding from "../components//Json_utils/WeddingAndEvent_Mangement.json";
 import HomeImageBanner from "../components/HomeImageBanner";
 import HeroBanner from "../components/HeroBanner";
+import DummyComponent from "../components/DummyComponent";
 const Home = () => {
   return (
     <div>
@@ -25,6 +26,8 @@ const Home = () => {
       <CategorySection categories={Rental} />
       <CategorySection categories={Transport} />
       <CategorySection categories={Wedding} /> 
+
+      {/* <DummyComponent/> */}
     </Wrapper>
     </div>
   );
