@@ -27,7 +27,7 @@ const Home = () => {
       <CategorySection categories={Transport} />
       <CategorySection categories={Wedding} /> 
 
-      {/* <DummyComponent/> */}
+      <DummyComponent/>
     </Wrapper>
     </div>
   );
