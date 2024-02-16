@@ -9,8 +9,12 @@ import Transport from "../components//Json_utils/Transportation.json";
 import Wedding from "../components//Json_utils/WeddingAndEvent_Mangement.json";
 import HomeImageBanner from "../components/HomeImageBanner";
 import HeroBanner from "../components/HeroBanner";
+<<<<<<< HEAD
 import Footer from "../components/Footer";
 
+=======
+import DummyComponent from "../components/DummyComponent";
+>>>>>>> 32ec22fd0b0d0ca0368e75a1dbb1dbd780b6930a
 const Home = () => {
   return (
     <div>
@@ -23,6 +27,7 @@ const Home = () => {
       {/* <Header /> */}
       <HomeImageBanner/>
       <HeroBanner/>
+<<<<<<< HEAD
       <div className="flex flex-col gap-3 md:gap-6 lg:gap-6">
         <CategorySection categories={ElectricalCategories} />
         <CategorySection categories={ConstructionCategories} />
@@ -36,6 +41,15 @@ const Home = () => {
       </div>
       
       
+=======
+      <CategorySection categories={ElectricalCategories} />
+      <CategorySection categories={ConstructionCategories} />
+      <CategorySection categories={Rental} />
+      <CategorySection categories={Transport} />
+      <CategorySection categories={Wedding} /> 
+
+      <DummyComponent/>
+>>>>>>> 32ec22fd0b0d0ca0368e75a1dbb1dbd780b6930a
     </Wrapper>
     </div>
   );

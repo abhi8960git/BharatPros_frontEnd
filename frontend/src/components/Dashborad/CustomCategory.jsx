@@ -47,8 +47,13 @@ const CategorySection = ({ categories }) => {
               >
                 <img src={category.image} alt={category.name} width={110} />
               </div>
+<<<<<<< HEAD
               {true && (
                 <p className="text-[0.8em] font-bold text-black bg-[#f5f5f5] p-2 rounded-md mt-1 md:mt-2 lg:mt-4 absolute bottom-7 ">Coming Soon</p>
+=======
+              {false && (
+                <p className="text-[0.8em] font-bold text-black bg-[#f5f5f5] p-2 rounded-md mt-1 absolute bottom-7 ">Coming Soon</p>
+>>>>>>> 32ec22fd0b0d0ca0368e75a1dbb1dbd780b6930a
               )}
               {!category.comingSoon && (
                 <p className="text-[0.8em] mt-1 md:mt-2 lg:mt-4">{category.name}</p>

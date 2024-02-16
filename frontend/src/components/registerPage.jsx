@@ -13,6 +13,7 @@ import Invoice from "./Invoice";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import SearchComponent from "./Dashborad/SearchComponent";
+import ServicesCard from "./ServicesCard";
 
 export function Register() {
   // State variables for form fields
@@ -525,6 +526,8 @@ export function Register() {
       <div className="flex justify-center items-center w-full">
         <Invoice />
       </div>
+
+      <ServicesCard/>
     </Box>
   );
 }
