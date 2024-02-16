@@ -9,9 +9,12 @@ import Transport from "../components//Json_utils/Transportation.json";
 import Wedding from "../components//Json_utils/WeddingAndEvent_Mangement.json";
 import HomeImageBanner from "../components/HomeImageBanner";
 import HeroBanner from "../components/HeroBanner";
+import Footer from "../components/Footer";
+
 const Home = () => {
   return (
     <div>
+      
       <Wrapper>
         {/* <div className="bg-[#f5f5f5] flex flex-col items-center justify-center  ">
           <img src='/Looking_service_providers.png' alt="image_service_provider"/>
@@ -20,11 +23,19 @@ const Home = () => {
       {/* <Header /> */}
       <HomeImageBanner/>
       <HeroBanner/>
-      <CategorySection categories={ElectricalCategories} />
-      <CategorySection categories={ConstructionCategories} />
-      <CategorySection categories={Rental} />
-      <CategorySection categories={Transport} />
-      <CategorySection categories={Wedding} /> 
+      <div className="flex flex-col gap-3 md:gap-6 lg:gap-6">
+        <CategorySection categories={ElectricalCategories} />
+        <CategorySection categories={ConstructionCategories} />
+        <CategorySection categories={Rental} />
+        <CategorySection categories={Transport} />
+        <CategorySection categories={Wedding} /> 
+      </div>
+      
+      <div className="hidden sm:block">
+        <Footer/>
+      </div>
+      
+      
     </Wrapper>
     </div>
   );

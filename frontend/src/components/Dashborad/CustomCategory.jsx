@@ -9,7 +9,7 @@ const responsive = {
   },
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 3,
+    items: 4,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
@@ -23,7 +23,7 @@ const responsive = {
 
 const CategorySection = ({ categories }) => {
   return (
-    <div className=" bg-[#f5f5f5] w-full px-2 py-1 mt-3">
+    <div className=" bg-[#f5f5f5] w-full px-2 py-1 mt-3 md:py-2 lg:py-6 rounded-2xl">
       <CustomText fontSize="text-lg ml-1 ">{categories[0].categoryName}</CustomText>
       <div className="rounded-md">
         <Carousel
@@ -48,10 +48,10 @@ const CategorySection = ({ categories }) => {
                 <img src={category.image} alt={category.name} width={110} />
               </div>
               {true && (
-                <p className="text-[0.8em] font-bold text-black bg-[#f5f5f5] p-2 rounded-md mt-1 absolute bottom-7 ">Coming Soon</p>
+                <p className="text-[0.8em] font-bold text-black bg-[#f5f5f5] p-2 rounded-md mt-1 md:mt-2 lg:mt-4 absolute bottom-7 ">Coming Soon</p>
               )}
               {!category.comingSoon && (
-                <p className="text-[0.8em] mt-1">{category.name}</p>
+                <p className="text-[0.8em] mt-1 md:mt-2 lg:mt-4">{category.name}</p>
               )}
             </div>
           ))}

@@ -20,21 +20,25 @@ root.render(
   <React.StrictMode>
     <>
       <Router>
-        <div className="w-full">
-          {window.innerWidth <= 768 && (
-            <div className="">
-              <Navitems />
-            </div>
-          )}
-          <NextUIProvider>
-            <App></App>
-          </NextUIProvider>
-          {window.innerWidth <= 768 && (
-            <div className="">
-              <SimpleBottomNavigation />
-            </div>
-          )}
+        <div className="flex justify-center">
+          <div className="w-full max-w-screen-lg px-4 ">
+            {/* {window.innerWidth <= 768 && (
+              <div className="">
+                <Navitems />
+              </div>
+            )} */}
+            <Navitems/>
+            <NextUIProvider>
+              <App></App>
+            </NextUIProvider>
+            {window.innerWidth <= 768 && (
+              <div className="">
+                <SimpleBottomNavigation />
+              </div>
+            )}
+          </div>
         </div>
+        
       </Router>
     </>
   </React.StrictMode>
