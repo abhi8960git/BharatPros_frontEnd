@@ -42,7 +42,7 @@ const Navitems = () => {
 
   return (
     <>
-      <div className="bg-zinc-100 shadow-sm flex justify-between px-3 items-center py-3 z-40 sticky">
+      <div className="bg-black/5 shadow-sm flex justify-between px-3 items-center py-3 z-40 sticky">
         <div className="flex items-center justify-center gap-1">
           {/* <h1 className="text-sm font-bold text-[#111111]">Himachal Pradesh</h1>
           <span className=" text-[12px] flex items-center gap-1 ml-[2px] cursor-pointer ">
@@ -59,15 +59,18 @@ const Navitems = () => {
         <span className="text-3xl cursor-pointer" onClick={toggleMobileMenu}>
           {/* <GiHamburgerMenu /> */}
         </span>
-        <button
-          className=" flex items-center justify-center gap-1 bg-blue-400 px-3 py-1 rounded-[5px] shadow text-white transition-all duration-200"
+      <div className="flex items-center gap-5 ">
+        <p className="hover:text-blue-400 mt-3">Register as Sevice Provider</p>
+      <button
+          className=" flex items-center justify-center gap-1 px-3 py-1.5 rounded-[5px] shadow-sm border border-black/15  text-black transition-all duration-200"
           onClick={showModal}
         >
-          Login / SignUp
+          Login 
           <span className="font-bold">
             <MdLogin />
           </span>
         </button>
+      </div>
       </div>
 
       {/* {isMobileMenuOpen && (

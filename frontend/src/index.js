@@ -14,6 +14,7 @@ import Hotel from "./Pages/Hotel";
 import Home from "./Pages/Home";
 import SimpleBottomNavigation from "./components/Dashborad/MobileNav";
 import { NextUIProvider } from "@nextui-org/react";
+import NewHeroSection from "./components/NewHeroSection";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
@@ -21,13 +22,14 @@ root.render(
     <>
       <Router>
         <div className="flex justify-center">
-          <div className="w-full max-w-screen-lg px-4 ">
+          <div className="w-full max-w-screen-  ">
             {/* {window.innerWidth <= 768 && (
               <div className="">
                 <Navitems />
               </div>
             )} */}
             <Navitems/>
+            <NewHeroSection/>
             <NextUIProvider>
               <App></App>
             </NextUIProvider>

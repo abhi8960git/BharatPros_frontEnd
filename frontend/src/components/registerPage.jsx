@@ -83,7 +83,6 @@ export function Register() {
   return (
     <Box className="p-4">
       <div className="bg-[#dcd8d8fe] flex justify-center p-5 mb-3 rounded-md font-bold text-xl text-gray-600">
-        
         <p className="flex gap-2 items-center ">
           Add service with details
           <span className="text-2xl">
@@ -93,37 +92,39 @@ export function Register() {
       </div>
       <Grid container spacing={0.7}>
         {/* Sectors Autocomplete */}
-        <Grid item xs={12} sm={3}>
-          <Autocomplete
-            options={sectors}
-            onChange={(event, newValue) => setSelectedSector(newValue)}
-            renderInput={(params) => (
-              <TextField {...params} label="All Sectors" variant="outlined" />
-            )}
-          />
-        </Grid>
-        {/* Services Autocomplete */}
-        <Grid item xs={12} sm={6}>
-          <Autocomplete
-            options={services}
-            onChange={(event, newValue) => setSelectedService(newValue)}
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                label="Select Service"
-                variant="outlined"
-              />
-            )}
-          />
-        </Grid>
-        {/* Other fields using Tailwind classes for styling */}
-        <Grid item xs={12}>
-          <TextField
-            label="FirmName (If any)"
-            variant="outlined"
-            className="w-full"
-          />
-        </Grid>
+        <div className="flex md:flex-row lg:flex-row flex-col w-full gap-1 mx-2 md:py-2 lg:py-2  ">
+          <Grid item xs={12} sm={5}>
+            <Autocomplete
+              options={sectors}
+              onChange={(event, newValue) => setSelectedSector(newValue)}
+              renderInput={(params) => (
+                <TextField {...params} label="All Sectors" variant="outlined" />
+              )}
+            />
+          </Grid>
+          {/* Services Autocomplete */}
+          <Grid item xs={12} sm={5}>
+            <Autocomplete
+              options={services}
+              onChange={(event, newValue) => setSelectedService(newValue)}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  label="Select Service"
+                  variant="outlined"
+                />
+              )}
+            />
+          </Grid>
+          {/* Other fields using Tailwind classes for styling */}
+          <Grid item xs={12} sm={5}>
+            <TextField
+              label="FirmName (If any)"
+              variant="outlined"
+              className="w-full"
+            />
+          </Grid>
+        </div>
         <Grid item xs={12}>
           <TextArea
             placeholder="Add Description"
@@ -193,7 +194,9 @@ export function Register() {
               </span>
             </div>
             <div className="my-2">
-              <button className=" text-sm bg-black/10 p-2 rounded-full text-black px-4 active:scale-105 duration-200 shadow-sm border border-black/10">Confirm Address</button>
+              <button className=" text-sm bg-black/10 p-2 rounded-full text-black px-4 active:scale-105 duration-200 shadow-sm border border-black/10">
+                Confirm Address
+              </button>
             </div>
           </div>
         </Grid>
@@ -527,7 +530,7 @@ export function Register() {
         <Invoice />
       </div>
 
-      <ServicesCard/>
+      <ServicesCard />
     </Box>
   );
 }
