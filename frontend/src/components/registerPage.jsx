@@ -14,6 +14,23 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import SearchComponent from "./Dashborad/SearchComponent";
 import ServicesCard from "./ServicesCard";
+import Sheet from "react-modal-sheet";
+import { render } from "react-dom";
+
+
+  // model window
+  const configs = [
+    {
+      stiffness: 300,
+      damping: 30,
+      mass: 0.2,
+    },
+    {
+      stiffness: 150,
+      damping: 20,
+      mass: 1,
+    },
+  ];
 
 export function Register() {
   // State variables for form fields
@@ -34,6 +51,8 @@ export function Register() {
   const [city, setCity] = useState("");
   const [district, setDistrict] = useState("");
   const [state, setState] = useState("");
+  const [isOpen, setOpen] = useState(true);
+  const [config, setConfig] = useState(configs[0]);
 
   const [availablePostOffices, setAvailablePostOffices] = useState([]);
 
@@ -78,6 +97,15 @@ export function Register() {
   const handleSubmit = () => {
     // Implement logic for form submission
     console.log("Form submitted!");
+  };
+
+
+
+  const toggleConfig = () => {
+    setConfig(
+      config?.stiffness === configs[0]?.stiffness ? configs[1] : configs[0]
+    );
+    setOpen(true);
   };
 
   return (
@@ -147,6 +175,83 @@ export function Register() {
           {/* ...address fields */}
           {/* ... (existing code) */}
 
+          {/* <button onClick={() => toggleConfig()}>Toggle Configs</button> */}
+          <Sheet
+            springConfig={config}
+            isOpen={isOpen}
+            onClose={() => setOpen(false)}
+            snapPoints={[500, 0]}
+            onSnap={(snapIndex) =>
+              console.log("> Current snap point index:", snapIndex)
+            }
+          >
+            <Sheet.Container>
+              <Sheet.Content>
+                <Sheet.Scroller draggableAt="both">
+
+                {
+                  [0,1,2,3,4].map(()=>(
+                    <div class="bg-[#f5f5f5] border border-gray-200 rounded-md flex flex-col justify-center items-center  gap-0 py-4">
+                    <div class="flex gap-1">
+                      <span class="word-span font-semibold text-center block mb-2">
+                        Archit
+                      </span>
+                      <span class="word-span font-semibold text-center block mb-2">
+                        Mahajan
+                      </span>
+                      <span class="word-span font-semibold text-center block mb-2">
+                        +917018268807
+                      </span>
+                    </div>
+        
+                    <div class="flex gap-1 text-[0.8em]">
+                      <span class="word-span font-normal text-center block ">Post</span>
+                      <span class="word-span font-normal text-center block ">
+                        Office:
+                      </span>
+                      <span class="word-span font-normal text-center block ">
+                        Bhanala
+                      </span>
+                    </div>
+        
+                    <div class="flex gap-1 text-[0.8em]">
+                      <span class="word-span font-normal text-center block ">
+                        Shahpur
+                      </span>
+                      <span class="word-span font-normal text-center block ">
+                        Kangra,
+                      </span>
+                      <span class="word-span font-normal text-center block">
+                        Himachal
+                      </span>
+                      <span class="word-span font-normal text-center block ">
+                        Pradesh
+                      </span>
+                    </div>
+        
+                    <div class="flex  gap-1 text-[0.8em]">
+                      <span class="word-span font-normal text-center block ">
+                        Pincode:
+                      </span>
+                      <span class="word-span font-normal text-center block ">
+                        176206
+                      </span>
+                    </div>
+                    <div className="my-2">
+                      <button  className=" text-sm bg-black/10 p-2 rounded-full text-black px-4 active:scale-105 duration-200 shadow-sm border border-black/10">
+                        Confirm Address
+                      </button>
+                    </div>
+                  </div>
+                  ))
+                }
+                </Sheet.Scroller>
+
+              </Sheet.Content>
+            </Sheet.Container>
+            <Sheet.Backdrop onClick={() => setOpen(false)} />
+          </Sheet>
+
           <div class="bg-[#f5f5f5] border border-gray-200 rounded-md flex flex-col justify-center items-center  gap-0 py-4">
             <div class="flex gap-1">
               <span class="word-span font-semibold text-center block mb-2">
@@ -194,7 +299,7 @@ export function Register() {
               </span>
             </div>
             <div className="my-2">
-              <button className=" text-sm bg-black/10 p-2 rounded-full text-black px-4 active:scale-105 duration-200 shadow-sm border border-black/10">
+              <button onClick={() => toggleConfig()} className=" text-sm bg-black/10 p-2 rounded-full text-black px-4 active:scale-105 duration-200 shadow-sm border border-black/10">
                 Confirm Address
               </button>
             </div>
