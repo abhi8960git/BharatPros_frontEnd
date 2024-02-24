@@ -190,7 +190,7 @@ export function Register() {
                 <Sheet.Scroller draggableAt="both">
 
                 {
-                  [0,1,2,3,4].map(()=>(
+                  [0,1,2,3,4,5,6].map(()=>(
                     <div class="bg-[#f5f5f5] border border-gray-200 rounded-md flex flex-col justify-center items-center  gap-0 py-4">
                     <div class="flex gap-1">
                       <span class="word-span font-semibold text-center block mb-2">

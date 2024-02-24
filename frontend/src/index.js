@@ -15,6 +15,7 @@ import Home from "./Pages/Home";
 import SimpleBottomNavigation from "./components/Dashborad/MobileNav";
 import { NextUIProvider } from "@nextui-org/react";
 import NewHeroSection from "./components/NewHeroSection";
+import NewTopHeaderSection from "./components/NewTopHeaderSection";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
@@ -29,6 +30,7 @@ root.render(
               </div>
             )} */}
             <Navitems/>
+            <NewTopHeaderSection/>
             <NewHeroSection/>
             <NextUIProvider>
               <App></App>
