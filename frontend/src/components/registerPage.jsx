@@ -17,7 +17,7 @@ import ServicesCard from "./ServicesCard";
 import Sheet from "react-modal-sheet";
 import { render } from "react-dom";
 
-
+import DummyComponent from './DummyComponent.jsx'
   // model window
   const configs = [
     {
@@ -187,11 +187,11 @@ export function Register() {
           >
             <Sheet.Container>
               <Sheet.Content>
-                <Sheet.Scroller draggableAt="both">
+                <Sheet.Scroller draggableAt="both" className="flex lg:flex-row flex-col lg:gap-4 justify-center">
 
                 {
                   [0,1,2,3,4,5,6].map(()=>(
-                    <div class="bg-[#f5f5f5] border border-gray-200 rounded-md flex flex-col justify-center items-center  gap-0 py-4">
+                    <div class="bg-[#f5f5f5] border border-gray-200 rounded-md flex flex-col justify-center items-center  gap-0 py-4 lg:px-4 lg:my-[4em]" >
                     <div class="flex gap-1">
                       <span class="word-span font-semibold text-center block mb-2">
                         Archit
@@ -636,6 +636,7 @@ export function Register() {
       </div>
 
       <ServicesCard />
+      <DummyComponent/>
     </Box>
   );
 }

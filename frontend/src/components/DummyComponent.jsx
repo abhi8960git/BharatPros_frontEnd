@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const DummyComponent = () => {
   const [status, setStatus] = useState("");
   const [changeStatus, setChangeStatus] = useState("");
+  const [professionalStatus, setProfessionalStatus] = useState({});
 
-  // Dummy data
   const professional = {
     professionals: [
       {
@@ -47,9 +47,16 @@ const DummyComponent = () => {
     ],
   };
 
-  // Dummy function, replace with actual implementation
+  const handleStatusChange = (e, id) => {
+    const { value } = e.target;
+    setProfessionalStatus((prevStatus) => ({
+      ...prevStatus,
+      [id]: value,
+    }));
+  };
+
   const onProfessionalUpdate = (id) => {
-    console.log("Professional updated with id:", id);
+    console.log("Professional updated with id:", id, "New status:", professionalStatus[id]);
   };
 
   return (
@@ -58,34 +65,12 @@ const DummyComponent = () => {
         <div>No Professionals</div>
       ) : (
         <div className="">
-          <div className=" flex justify-between items-center mx-4">
-            <Link to="/professionals" className="btn btn-light">
-              <i className="fas fa-graduation-cap text-primary" /> Assign
-              Professional
-            </Link>
-            <select
-              onChange={(e) => setStatus(e.target.value)}
-              className="block my-4 p-1 px-2 rounded-lg bg-black/10"
-            >
-              <option value={""}>All</option>
-              <option key={"applied"} value={"applied"}>
-                {" "}
-                Applied{" "}
-              </option>
-              <option key={"active"} value={"active"}>
-                {" "}
-                Active{" "}
-              </option>
-              <option key={"expired"} value={"expired"}>
-                {" "}
-                Expired{" "}
-              </option>
-            </select>
-          </div>
           {professional.professionals.map((proItem, index) => (
             <div key={index} className="bg-black/5  rounded-md p-4 mb-4">
               <div className="flex justify-between mb-2">
-                <h2 className="text-lg font-semibold">{proItem.name}</h2>
+                <h2 className="text-lg font-semibold ">
+                  {proItem.name}
+                </h2>
                 <span
                   className={`px-2 py-1 pt-1.5 rounded-full text-xs ${
                     proItem.status === "Active"
@@ -98,17 +83,17 @@ const DummyComponent = () => {
               </div>
               <div className="mb-2 text-start ml-4">
                 <p>
-                  <span className="font-semibold">Service:</span>{" "}
+                  <span className="font-semibold mr-1">Service: </span>{" "}
                   {proItem.service}
                 </p>
                 <p>
-                  <span className="font-semibold">Sector:</span>{" "}
+                  <span className="font-semibold mr-1">Sector: </span>{" "}
                   {proItem.sector}
                 </p>
               </div>
-              <div className="mb-2">
+              <div className="mb-2 text-start ml-4">
                 <p>
-                  <span className="font-semibold  -ml-7 text-start">Location:</span>{" "}
+                  <span className="font-semibold  text-start mr-1">Location:</span>{" "}
                   {proItem.address.cityDistrictTown}, {proItem.address.landmark}
                   , {proItem.address.locality}
                 </p>
@@ -116,7 +101,7 @@ const DummyComponent = () => {
               <div className="flex justify-between items-center">
                 <div>
                   <select
-                    onChange={(e) => setChangeStatus(e.target.value)}
+                    onChange={(e) => handleStatusChange(e, proItem._id)}
                     className="block my-2 bg-black/10 p-1 px-2  rounded-lg"
                   >
                     <option> Select Status</option>
