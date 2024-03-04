@@ -7,7 +7,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross1 } from "react-icons/rx";
 
 const Navitems = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [phone, setPhone] = React.useState("");
 
   const handleChange = (newPhone) => {
