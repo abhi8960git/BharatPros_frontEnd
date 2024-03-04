@@ -8,6 +8,8 @@
         {"name": "AC", "image": "/AC.jpeg"},
         {"name": "Refrigerator", "image": "/Refrigerator.jpeg"},
         {"name": "TV", "image": "/TV.jpeg"},
+        {"name": "Washing Machine", "image": "/WashingMachine.jpeg"},
+        {"name": "Washing Machine", "image": "/WashingMachine.jpeg"},
         {"name": "Washing Machine", "image": "/WashingMachine.jpeg"}
       ]
     }

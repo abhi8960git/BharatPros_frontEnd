@@ -10,6 +10,7 @@ import Wedding from "../components//Json_utils/WeddingAndEvent_Mangement.json";
 import HomeImageBanner from "../components/HomeImageBanner";
 import HeroBanner from "../components/HeroBanner";
 import Footer from "../components/Footer";
+import MainServicesCategory from "../components/Dashborad/MainServicesCategory";
 
 const Home = () => {
   return (
@@ -21,9 +22,10 @@ const Home = () => {
           <button className="  bg-transparent hover:bg-[#c9c5c5] text-gray-600 font-bold  border-2 border-[#c5c5c5] p-2 rounded-lg px-3 shadow-sm mb-4">Register As service Provider</button>
         </div> */}
       {/* <Header /> */}
-      <HomeImageBanner/>
-      <HeroBanner/>
-      <div className="flex flex-col gap-3 md:gap-6 lg:gap-6">
+      {/* <HomeImageBanner/> */}
+      {/* <HeroBanner/> */}
+      <div className="flex items-center  justify-center flex-col ">
+        <MainServicesCategory categories={ElectricalCategories}/>
         <CategorySection categories={ElectricalCategories} />
         <CategorySection categories={ConstructionCategories} />
         <CategorySection categories={Rental} />

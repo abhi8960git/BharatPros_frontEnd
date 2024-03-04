@@ -5,11 +5,11 @@ import Carousel from "react-multi-carousel";
 const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 3000 },
-    items: 5,
+    items: 4,
   },
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 5,
+    items: 3,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
@@ -21,7 +21,7 @@ const responsive = {
   },
 };
 
-const CategorySection = ({ categories }) => {
+const MainServicesCategory = ({ categories }) => {
   return (
     <div className=" lg:w-[70%]  w-full px-2 mb-6 rounded-2xl">
       <CustomText fontSize="text-3xl ml-1 my-3 mb-4 ">
@@ -41,12 +41,12 @@ const CategorySection = ({ categories }) => {
               className="flex flex-col justify-start items-center cursor-pointer backdrop-blur-lg"
             >
               <div
-                className={`  shadow-md lg:w-[250px] lg:h-[250px]  md:w-[150px] md:h-[150px] w-[120px] h-[120px] overflow-hidden rounded-lg border-1 bg-[#f5f5f5] relative ${
+                className={`  shadow-md lg:w-[420px] lg:h-[210px]  md:w-[150px] md:h-[150px] w-[120px] h-[120px] overflow-hidden rounded-lg border-1 bg-[#f5f5f5] relative ${
                   category.name === "See more" ? "border-none" : ""
                 } ${true ? "blur-[0px]" : ""}`}
               >
                 <img
-                  src={category.image}
+                  src="Poster-Services-Electrician.jpeg"
                   alt={category.name}
                   width="full"
                   className="object-cover hover:scale-110 transitions-all duration-200"
@@ -70,4 +70,4 @@ const CategorySection = ({ categories }) => {
   );
 };
 
-export default CategorySection;
+export default MainServicesCategory;

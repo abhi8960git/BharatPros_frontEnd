@@ -23,15 +23,15 @@ root.render(
     <>
       <Router>
         <div className="flex justify-center">
-          <div className="w-full max-w-screen-  ">
+          <div className="w-full max-w-screen ">
             {/* {window.innerWidth <= 768 && (
               <div className="">
                 <Navitems />
               </div>
             )} */}
             <Navitems/>
-            <NewTopHeaderSection/>
-            <NewHeroSection/>
+            {/* <NewTopHeaderSection/> */}
+            {/* <NewHeroSection/> */}
             <NextUIProvider>
               <App></App>
             </NextUIProvider>

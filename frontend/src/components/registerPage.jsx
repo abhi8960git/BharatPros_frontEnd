@@ -17,20 +17,20 @@ import ServicesCard from "./ServicesCard";
 import Sheet from "react-modal-sheet";
 import { render } from "react-dom";
 
-import DummyComponent from './DummyComponent.jsx'
-  // model window
-  const configs = [
-    {
-      stiffness: 300,
-      damping: 30,
-      mass: 0.2,
-    },
-    {
-      stiffness: 150,
-      damping: 20,
-      mass: 1,
-    },
-  ];
+import DummyComponent from "./DummyComponent.jsx";
+// model window
+const configs = [
+  {
+    stiffness: 300,
+    damping: 30,
+    mass: 0.2,
+  },
+  {
+    stiffness: 150,
+    damping: 20,
+    mass: 1,
+  },
+];
 
 export function Register() {
   // State variables for form fields
@@ -99,8 +99,6 @@ export function Register() {
     console.log("Form submitted!");
   };
 
-
-
   const toggleConfig = () => {
     setConfig(
       config?.stiffness === configs[0]?.stiffness ? configs[1] : configs[0]
@@ -109,7 +107,7 @@ export function Register() {
   };
 
   return (
-    <Box className="p-4">
+    <Box className="p-4 lg:w-[70%] m-auto">
       <div className="bg-[#dcd8d8fe] flex justify-center p-5 mb-3 rounded-md font-bold text-xl text-gray-600">
         <p className="flex gap-2 items-center ">
           Add service with details
@@ -161,6 +159,7 @@ export function Register() {
             variant="outlined"
           />
         </Grid>
+
         {/* Address section */}
         <Grid item xs={12} className="mt-4">
           <p
@@ -180,73 +179,92 @@ export function Register() {
             springConfig={config}
             isOpen={isOpen}
             onClose={() => setOpen(false)}
-            snapPoints={[500, 0]}
+            snapPoints={[1000, 0]}
             onSnap={(snapIndex) =>
               console.log("> Current snap point index:", snapIndex)
             }
           >
             <Sheet.Container>
               <Sheet.Content>
-                <Sheet.Scroller draggableAt="both" className="flex lg:flex-row flex-col lg:gap-4 justify-center">
-
-                {
-                  [0,1,2,3,4,5,6].map(()=>(
-                    <div class="bg-[#f5f5f5] border border-gray-200 rounded-md flex flex-col justify-center items-center  gap-0 py-4 lg:px-4 lg:my-[4em]" >
-                    <div class="flex gap-1">
-                      <span class="word-span font-semibold text-center block mb-2">
-                        Archit
-                      </span>
-                      <span class="word-span font-semibold text-center block mb-2">
-                        Mahajan
-                      </span>
-                      <span class="word-span font-semibold text-center block mb-2">
-                        +917018268807
-                      </span>
-                    </div>
-        
-                    <div class="flex gap-1 text-[0.8em]">
-                      <span class="word-span font-normal text-center block ">Post</span>
-                      <span class="word-span font-normal text-center block ">
-                        Office:
-                      </span>
-                      <span class="word-span font-normal text-center block ">
-                        Bhanala
-                      </span>
-                    </div>
-        
-                    <div class="flex gap-1 text-[0.8em]">
-                      <span class="word-span font-normal text-center block ">
-                        Shahpur
-                      </span>
-                      <span class="word-span font-normal text-center block ">
-                        Kangra,
-                      </span>
-                      <span class="word-span font-normal text-center block">
-                        Himachal
-                      </span>
-                      <span class="word-span font-normal text-center block ">
-                        Pradesh
-                      </span>
-                    </div>
-        
-                    <div class="flex  gap-1 text-[0.8em]">
-                      <span class="word-span font-normal text-center block ">
-                        Pincode:
-                      </span>
-                      <span class="word-span font-normal text-center block ">
-                        176206
-                      </span>
-                    </div>
-                    <div className="my-2">
-                      <button  className=" text-sm bg-black/10 p-2 rounded-full text-black px-4 active:scale-105 duration-200 shadow-sm border border-black/10">
-                        Confirm Address
-                      </button>
-                    </div>
+                <Sheet.Scroller
+                  style={{ padding: "20px 20px", margin: "30px" }}
+                  draggableAt="both"
+                  className="flex lg:flex-row  flex-col gap-3 lg:gap-4 justify-center"
+                >
+                  <div className=" w-full">
+                    . Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Labore, rem magni reprehenderit voluptatum aspernatur totam
+                    natus aliquam vero accusantium hic? Laudantium iusto et
+                    tempore non magnam delectus, qui natus blanditiis,
+                    consequatur suscipit ipsa consequuntur nam porro dicta in
+                    nobis odio, labore atque magni vel. Nulla qui ad recusandae
+                    nemo autem itaque voluptatibus voluptas commodi atque ipsa
+                    laboriosam cum in accusamus sint, delectus odio quo deserunt
+                    reprehenderit aliquid sed velit obcaecati minima! Qui iste
+                    alias similique ex corrupti omnis ea quibusdam, officiis
+                    animi. Temporibus id dignissimos laborum cum at ipsam fuga
+                    nisi. Fugit doloribus deleniti iure quibusdam libero
+                    corrupti illum quaerat hic non exercitationem assumenda
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius nisi ratione sequi labore id vero in at obcaecati 
+                   
                   </div>
-                  ))
-                }
-                </Sheet.Scroller>
+                  {[0, 1, 2, 3, 4, 5, 6,7,8,9].map(() => (
+                    <div class="bg-[#f5f5f5] border  border-gray-200 rounded-md flex flex-col justify-center items-center  gap-0 py-4 lg:px-4 lg:my-[4em]">
+                      <div class="flex gap-1 ">
+                        <span class="word-span font-semibold text-center block mb-2">
+                          Archit
+                        </span>
+                        <span class="word-span font-semibold text-center block mb-2">
+                          Mahajan
+                        </span>
+                        <span class="word-span font-semibold text-center block mb-2">
+                          +917018268807
+                        </span>
+                      </div>
 
+                      <div class="flex gap-1 text-[0.8em]">
+                        <span class="word-span font-normal text-center block ">
+                          Post
+                        </span>
+                        <span class="word-span font-normal text-center block ">
+                          Office:
+                        </span>
+                        <span class="word-span font-normal text-center block ">
+                          Bhanala
+                        </span>
+                      </div>
+
+                      <div class="flex gap-1 text-[0.8em]">
+                        <span class="word-span font-normal text-center block ">
+                          Shahpur
+                        </span>
+                        <span class="word-span font-normal text-center block ">
+                          Kangra,
+                        </span>
+                        <span class="word-span font-normal text-center block">
+                          Himachal
+                        </span>
+                        <span class="word-span font-normal text-center block ">
+                          Pradesh
+                        </span>
+                      </div>
+
+                      <div class="flex  gap-1 text-[0.8em]">
+                        <span class="word-span font-normal text-center block ">
+                          Pincode:
+                        </span>
+                        <span class="word-span font-normal text-center block ">
+                          176206
+                        </span>
+                      </div>
+                      <div className="my-2">
+                        <button className=" text-sm bg-black/10 p-2 rounded-full text-black px-4 active:scale-105 duration-200 shadow-sm border border-black/10">
+                          Confirm Address
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </Sheet.Scroller>
               </Sheet.Content>
             </Sheet.Container>
             <Sheet.Backdrop onClick={() => setOpen(false)} />
@@ -299,63 +317,64 @@ export function Register() {
               </span>
             </div>
             <div className="my-2">
-              <button onClick={() => toggleConfig()} className=" text-sm bg-black/10 p-2 rounded-full text-black px-4 active:scale-105 duration-200 shadow-sm border border-black/10">
-                Confirm Address
+              <button
+                onClick={() => toggleConfig()}
+                className=" text-sm bg-black/10 p-2 rounded-full text-black px-4 active:scale-105 duration-200 shadow-sm border border-black/10"
+              >
+                Add Address +
               </button>
             </div>
           </div>
         </Grid>
       </Grid>
-      <div className="container">
-        <div className="invoice-details">
-          <p
-            variant="h6"
-            className="mb-2 mt-5 bg-[#dcd8d8fe] flex items-center gap-2 justify-center p-5 mb-3 rounded-md font-bold text-xl text-gray-600"
-          >
-            Invoice Details
-            <span className="text-2xl">
-              <LiaFileInvoiceDollarSolid />
-            </span>{" "}
-          </p>{" "}
-        </div>
 
-        <div className="referral-code-input flex flex-col justify-center items-center">
-          <div className="referral-code-button mx-2 text-sm transition-all duration-200 ">
-            Having a referral?{" "}
-            <button
-              onClick={() => {
-                /* Handle referral code input */
-                setIsReferralOpenHandler();
-              }}
-              className="text-blue-500 hover:to-blue-500 transition-all duration-200 "
-            >
-              Click here{" "}
-            </button>{" "}
-            to enter your referral code.
-          </div>
+      <div className="bg-[#dcd8d8fe] flex justify-center p-5 mt-3 mb-3 rounded-md font-bold text-xl text-gray-600">
+        <p className="flex gap-2 items-center ">
+          Invoice Details
+          <span className="text-2xl">
+            <LiaFileInvoiceDollarSolid />
+          </span>
+        </p>
+      </div>
 
-          {isreferralOpen && (
-            <input
-              type="number"
-              placeholder="Referral Code"
-              className="w-full flex items-center justify-center py-2 px-3 mx-2 my-1 rounded-md border border-gray-300 "
-            />
-          )}
-          {/* Add referral code input field here (if applicable) */}
-        </div>
-
-        <div className="payment-options">
-          <p
-            variant="h6"
-            className=" my-2 mt-4 bg-[#dcd8d8fe] flex items-center gap-2 justify-center p-5 mb-3 rounded-md font-bold text-xl text-gray-600"
-          >
-            Payment Options
-            <span className="text-2xl">
-              <MdPayment />
-            </span>{" "}
-          </p>
+      <div className="referral-code-input flex flex-col justify-center items-center">
+        <div className="referral-code-button mx-2 text-sm transition-all duration-200 ">
+          Having a referral?{" "}
           <button
-            className="flex items-center gap-2 bg-[#f5f5f581] border-2 border-gray-200 justify-center w-full py-2 rounded-md text-lg font-semibold "
+            onClick={() => {
+              /* Handle referral code input */
+              setIsReferralOpenHandler();
+            }}
+            className="text-blue-500 hover:to-blue-500 transition-all duration-200 "
+          >
+            Click here{" "}
+          </button>{" "}
+          to enter your referral code.
+        </div>
+
+        {isreferralOpen && (
+          <input
+            type="number"
+            placeholder="Referral Code"
+            className=" flex items-center justify-center py-2 px-3 mx-2 my-1 rounded-md border border-gray-300 "
+          />
+        )}
+        {/* Add referral code input field here (if applicable) */}
+      </div>
+
+      <div className="payment-options ">
+        <p
+          variant="h6"
+          className=" my-2 mt-4 bg-[#dcd8d8fe] flex items-center gap-2 justify-center p-5 mb-3 rounded-md font-bold text-xl text-gray-600"
+        >
+          Payment Options
+          <span className="text-2xl">
+            <MdPayment />
+          </span>{" "}
+        </p>
+        <div className="flex lg:flex-row md:flex-row  flex-col gap-3">
+          <button
+            className=" lg:ml-[12em] md:ml-[4em] flex items-center gap-2 bg-[#f5f5f581] border-2 border-gray-200 justify-center w-full py-2 rounded-md text-lg font-semibold  "
             onClick={() => {
               /* Handle UPI payment logic */
             }}
@@ -364,7 +383,7 @@ export function Register() {
           </button>
 
           <button
-            className="flex mt-2 items-center gap-2 bg-[#f5f5f581] border-2 border-gray-200 justify-center w-full py-[10px] rounded-md text-xl font-semibold "
+            className="lg:mr-[12em] md:mr-[4em] flex mt-2 lg:mt-0 md:mt-0 items-center gap-2 bg-[#f5f5f581] border-2 border-gray-200 justify-center w-full py-[10px] rounded-md text-xl font-semibold "
             onClick={() => {
               /* Handle UPI payment logic */
             }}
@@ -444,9 +463,9 @@ export function Register() {
             />
           </div>
 
-          <div className="flex gap-2">
+          <div className="flex gap-2 w-full md:flex-row lg:flex-row flex-col">
             {/* Pincode input */}
-            <div className="mb-2">
+            <div className="mb-2 w-full">
               <label
                 htmlFor="pincode"
                 className="block text-sm font-medium text-gray-600"
@@ -462,7 +481,7 @@ export function Register() {
               />
             </div>
 
-            <div className="mb-2">
+            <div className="mb-2 w-full">
               <label
                 htmlFor="postoffice"
                 className="block text-sm font-medium text-gray-600"
@@ -471,7 +490,7 @@ export function Register() {
               </label>
               <select
                 id="postoffice"
-                className="mt-1 p-2 w-full border rounded-md"
+                className="mt-1 p-2 py-2.5 w-full border rounded-md"
                 value={postoffice}
                 onChange={(e) => setPostoffice(e.target.value)}
               >
@@ -487,8 +506,8 @@ export function Register() {
             </div>
           </div>
 
-          <div className="flex gap-2">
-            <div className="mb-2">
+          <div className="flex gap-2 w-full md:flex-row lg:flex-row flex-col">
+            <div className="mb-2 w-full">
               <label
                 htmlFor="city"
                 className="   block text-sm font-medium text-gray-600"
@@ -504,7 +523,7 @@ export function Register() {
               />
             </div>
 
-            <div className="mb-2">
+            <div className="mb-2 w-full ">
               <label
                 htmlFor="district"
                 className="block text-sm font-medium text-gray-600"
@@ -519,21 +538,21 @@ export function Register() {
                 readOnly
               />
             </div>
-          </div>
-          <div className="mb-3">
-            <label
-              htmlFor="state"
-              className="block text-sm font-medium text-gray-600"
-            >
-              State
-            </label>
-            <input
-              type="text"
-              id="state"
-              className=" bg-[#f5f5f5] mt-1 p-2 w-full border rounded-md"
-              value={state}
-              readOnly
-            />
+            <div className="mb-3 w-full">
+              <label
+                htmlFor="state"
+                className="block text-sm font-medium text-gray-600"
+              >
+                State
+              </label>
+              <input
+                type="text"
+                id="state"
+                className=" bg-[#f5f5f5] mt-1 p-2 w-full border rounded-md"
+                value={state}
+                readOnly
+              />
+            </div>
           </div>
 
           {showAdditionalAddressFields && (
@@ -630,13 +649,13 @@ export function Register() {
         </div>
       )}
 
-      <ImageInput />
+      {/* <ImageInput /> */}
       <div className="flex justify-center items-center w-full">
-        <Invoice />
+        {/* <Invoice /> */}
       </div>
 
-      <ServicesCard />
-      <DummyComponent/>
+      {/* <ServicesCard /> */}
+      {/* <DummyComponent /> */}
     </Box>
   );
 }

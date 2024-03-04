@@ -1,96 +1,54 @@
 import React, { useState } from "react";
+import { MdLogin } from "react-icons/md";
+import { Modal } from "antd";
+import { MuiTelInput } from "mui-tel-input";
 import { IoIosArrowDown } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross1 } from "react-icons/rx";
-import { Modal } from "antd";
-import { MdLogin } from "react-icons/md";
-import { MuiTelInput } from "mui-tel-input";
-import { Input } from "@mui/material";
-const Navitems = () => {
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // number input
+const Navitems = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [phone, setPhone] = React.useState("");
 
   const handleChange = (newPhone) => {
     setPhone(newPhone);
   };
 
-  // handler function for modal ---> start
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
     setIsModalOpen(true);
   };
+
   const handleOk = () => {
     setIsModalOpen(false);
   };
+
   const handleCancel = () => {
     setIsModalOpen(false);
   };
 
-  // handler function for modal ---> end
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!isMobileMenuOpen);
-    console.log("toggle open");
-  };
-
-  const toggleCloseMobileMenu = () => {
-    setMobileMenuOpen(false); // Set to false to close the mobile menu
-    console.log("toggle close");
-  };
-
   return (
     <>
-      <div className="bg-black/5 shadow-sm flex justify-between px-3 items-center py-3 z-40 sticky">
-        <div className="flex items-center justify-center gap-1">
-          {/* <h1 className="text-sm font-bold text-[#111111]">Himachal Pradesh</h1>
-          <span className=" text-[12px] flex items-center gap-1 ml-[2px] cursor-pointer ">
-            {" "}
-            Chamba
-            <IoIosArrowDown />
-          </span> */}
-
-          <img src="bharatPros_logo.png" alt="bharat_pros" width={22} />
-          <div className="mt-2">
-            <p className="text-gradient text-lg font-semibold  ">BharatPros</p>
+      <div className="bg-white border-b border-b-black/10  flex justify-center lg:px-3 items-center py-3.5 z-40 sticky top-0">
+        <div className="flex justify-between items-center md:w-[90%] lg:w-[70%]">
+          <div className="flex items-center justify-center gap-1">
+            <img src="bharatPros_logo.png" alt="bharat_pros" width={22} />
+            <div className="mt-2">
+              <p className="text-gradient text-2xl font-semibold">BharatPros</p>
+            </div>
           </div>
-        </div>
-        <span className="text-3xl cursor-pointer" onClick={toggleMobileMenu}>
-          {/* <GiHamburgerMenu /> */}
-        </span>
-      <div className="flex items-center gap-5 ">
-        <p className="hover:text-blue-400 mt-3">Register as Sevice Provider</p>
-      <button
-          className=" flex items-center justify-center gap-1 px-3 py-1.5 rounded-[5px] shadow-sm border border-black/15  text-black transition-all duration-200"
-          onClick={showModal}
-        >
-          Login 
-          <span className="font-bold">
-            <MdLogin />
-          </span>
-        </button>
-      </div>
-      </div>
-
-      {/* {isMobileMenuOpen && (
-        <div className="fixed top-0 right-0 h-screen w-[60%] bg-white transform traslate-x-full transition-transform duration-300 ease-in-out z-50 ">
-          <span
-            className="absolute right-5 top-5 text-xl hover:border-2 hover:border-black active transition-all duration-200"
-            onClick={toggleCloseMobileMenu}
-          >
-            <RxCross1 />
-          </span>
-          <div className="py-4 px-8 mt-[30px]"> */}
-      {/* <button
-              className=" border-[1px] border-black px-3 py-1 rounded-[9px] shadow-md hover:bg-black hover:text-white transition-all duration-200"
+          <div className="flex items-center gap-5">
+            <p className="hover:text-blue-400">Register as Service Provider</p>
+            <button
+              className="flex items-center justify-center gap-1 px-3 py-2 rounded-[5px] shadow-sm border border-black/15  text-black transition-all duration-200 font-bold"
               onClick={showModal}
             >
               Login
-            </button> */}
-      {/* Add more menu items as needed */}
+              <MdLogin />
+            </button>
+          </div>
+        </div>
+      </div>
 
-      {/* modal */}
       <Modal
         title="Login / SignUp"
         open={isModalOpen}
@@ -98,8 +56,8 @@ const Navitems = () => {
         onCancel={handleCancel}
         footer={null}
       >
-        <div className="flex flex-col gap-3  ">
-          <div className="grid grid-cols-10 gap-2 ">
+        <div className="flex flex-col gap-3">
+          <div className="grid grid-cols-10 gap-2">
             <div className="col-span-7">
               <MuiTelInput
                 className="phone-input"
@@ -109,34 +67,25 @@ const Navitems = () => {
                 onChange={handleChange}
               />
             </div>
-            <button className=" col-span-3 border border-black px-[1.2em] rounded-md flex items-center justify-center gap-1 text-black hover:text-white hover:bg-black transition-all duration-200">
+            <button className="col-span-3 border border-black px-[1.2em] rounded-md flex items-center justify-center gap-1 text-black hover:text-white hover:bg-black transition-all duration-200">
               LogIn
-              <span>
-                <MdLogin />
-              </span>
+              <MdLogin />
             </button>
           </div>
-          <div className="grid grid-cols-10 gap-2 ">
+          <div className="grid grid-cols-10 gap-2">
             <input
               type="number"
               id="numberInput"
               name="numberInput"
               placeholder="Enter OTP .."
-              className=" col-span-7 outline-blue-600 text-[15px] border border-zinc-300 rounded-[4px] px-[9px] text-md py-[7px] "
+              className="col-span-7 outline-blue-600 text-[15px] border border-zinc-300 rounded-[4px] px-[9px] text-md py-[7px]"
             />
-            <button className=" col-span-3 border border-black px-[1em] rounded-md flex items-center justify-center gap-1 text-black hover:text-white hover:bg-black transition-all duration-200 py-[7px]">
+            <button className="col-span-3 border border-black px-[1em] rounded-md flex items-center justify-center gap-1 text-black hover:text-white hover:bg-black transition-all duration-200 py-[7px]">
               Verify
             </button>
           </div>
         </div>
       </Modal>
-      {/* </div>
-        </div>
-      )} */}
-
-      <div className="flex justify-center items-center mt-3">
-        {/* <SearchComponent /> */}
-      </div>
     </>
   );
 };

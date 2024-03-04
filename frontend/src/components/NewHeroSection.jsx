@@ -2,12 +2,12 @@ import React from "react";
 
 const NewHeroSection = () => {
   return (
-    <div className=" flex justify-evenly items-center">
+    <div className="  flex justify-center lg:gap-[9em] items-center mb-5 mt-8">
       {/* first section */}
       <div className="flex flex-col gap-2.5">
-        <p className="text-3xl font-bold">Get Services in Himachal Pradesh</p>
-        <div className="flex flex-col gap-2 border border-black/30 p-4 rounded-lg shadow-md ">
-          <p className="text-gray-500 font-bold">
+        <p className="text-4xl  font-bold mb-5">Get Services of your surrounding <br/> online </p>
+        <div className="flex flex-col gap-2 border border-black/10 p-4 rounded-lg ">
+          <p className="text-gray-500 text-xl font-bold mb-3">
             Services you are looking for ?
           </p>
           <div className="grid grid-cols-3 gap-3">
@@ -24,17 +24,17 @@ const NewHeroSection = () => {
                 key={index}
               >
               <div
-                  className="bg-black/5 rounded-lg border border-gray-200 p-2 px-3 m"
+                  className="bg-black/5 rounded-lg p-2 px-3 m"
 
                >
               <img
                   src={`${e.imgName}`}
                   alt={`${e.imgName}`}
-                  width={90}
-                  height={90}
+                  width={110}
+                  height={110}
                 />
                 </div>
-                <p className="text-sm">{e.serviceName}</p>
+                <p className="text-sm mt-2">{e.serviceName}</p>
               </div>
             ))}
           </div>
@@ -48,12 +48,11 @@ const NewHeroSection = () => {
           { imgName: "RajMistri.jpeg", roundness: "rounded-bl-lg" },
           { imgName: "RajMistri.jpeg", roundness: "rounded-br-lg" },
         ].map((e, index) => (
-          <div key={index}>
+          <div key={index} className="w-[280px] h-[280px]">
             <img
               src={e.imgName}
               alt={e.imgName}
-              width={175}
-              height={175}
+            sizes="full"
               className={`${e.roundness}`}
             />
           </div>
