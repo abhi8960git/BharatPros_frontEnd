@@ -13,7 +13,7 @@ const responsive = {
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 5,
+    items: 4,
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
@@ -23,7 +23,7 @@ const responsive = {
 
 const MainServicesCategory = ({ categories }) => {
   return (
-    <div className=" lg:w-[70%]  w-full px-2 mb-6 rounded-2xl">
+    <div className=" lg:max-w-[80em]  w-full px-2 mb-6 rounded-2xl">
       <CustomText fontSize="text-3xl ml-1 my-3 mb-4 ">
         {categories[0].categoryName}
       </CustomText>
@@ -41,7 +41,7 @@ const MainServicesCategory = ({ categories }) => {
               className="flex flex-col justify-start items-center cursor-pointer backdrop-blur-lg"
             >
               <div
-                className={`  shadow-md lg:w-[420px] lg:h-[210px]  md:w-[150px] md:h-[150px] w-[120px] h-[120px] overflow-hidden rounded-lg border-1 bg-[#f5f5f5] relative ${
+                className={`  shadow-md lg:w-[25.5em] lg:h-[13em]  md:w-[150px] md:h-[150px] w-[120px] h-[120px] overflow-hidden rounded-lg border-1 bg-[#f5f5f5] relative ${
                   category.name === "See more" ? "border-none" : ""
                 } ${true ? "blur-[0px]" : ""}`}
               >
