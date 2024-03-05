@@ -30,10 +30,10 @@ const MobileUserSideNav = ({ onClose }) => {
           background: "white", // semi-transparent black background
           zIndex: 0,
         }}
-        className="bg-[#cfcdcd] h-full z-50 overflow-hidden"
+        className="bg-[#cfcdcd] h-full z-50 overflow-hidden "
       >
         {/* Your mobile side navigation content goes here */}
-        <div className=" bg-[#f5f5f5] pt-[30px] h-full ">
+        <div className=" bg-[#f5f5f5] pt-[30px] h-full lg:max-w-[70%] m-auto  mt-[4.5em] ">
           {/* header div */}
           <div className="bg-[#cfcdcd] py-2  flex items-center mx-2 rounded-md shadow-md mb-2 ">
             <img src="mobile_user_icon.png" alt="user_icon" width={80} />
@@ -45,11 +45,11 @@ const MobileUserSideNav = ({ onClose }) => {
             </div>
           </div>
   
-          <div className="w-full ">
-            <ul className="w-full grid grid-cols-2">
+          <div className="lg:w-[60%] md:w-[60%] w-full m-auto ">
+            <ul className="w-full grid grid-cols-2 ">
               {menuItems.map((item) => (
                 <li key={item.id} className="col-span-1">
-                  <div className="flex flex-col gap-2 py-3 px-2 font-bold text-xl justify-center items-center m-2 bg-blue-100 shadow-sm border border-gray-500 rounded-md hover:bg-slate-300 transition-all duration-200">
+                  <div className="flex flex-col gap-2 py-3 lg:py-8 md:py-8 px-2 font-bold text-xl justify-center items-center m-2 bg-blue-100 shadow-sm border border-gray-500 rounded-md hover:bg-slate-300 transition-all duration-200">
                     <img src={item.icon} alt={`${item.label}_icon`} width={50} />
                     {item.label}
                   </div>

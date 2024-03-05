@@ -12,6 +12,7 @@ import AddExperiencePage from "../AddExperiencePage";
 import AddEducationPage from "../AddEducationPage";
 import ProfileEducation from "../ProfileEducation";
 import CreateProfile from "../CreateProfile";
+import MobileUserSideNav from "../MobileUserSideNav";
 
 const UserProfile = () => {
   const [open, setOpen] = useState(false);
@@ -46,7 +47,7 @@ const UserProfile = () => {
   };
 
   return (
-    <div className="flex gap-2 flex-col">
+    <div className="flex gap-2 flex-col lg:max-w-[70%] m-auto">
       <div className="bg-black/10  h-[150px] -mt-3  rounded-b-full relative">
         <p className="text-md font-semibold py-1 text-3xl absolute left-1/2 transform -translate-x-1/2 top-3 w-full text-center text-black/70">
           {username}
@@ -181,6 +182,9 @@ const UserProfile = () => {
       <AddEducationPage/>
       <ProfileEducation/>
       <CreateProfile/>
+
+
+      {/* <MobileUserSideNav/> */}
       
     </div>
   );

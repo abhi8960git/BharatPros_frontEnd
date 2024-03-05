@@ -64,6 +64,7 @@ export default function SimpleBottomNavigation() {
             onClick={toggleNav} // Open the mobile side nav on click
           />
         </BottomNavigation>
+       
       </Paper>
     </Box>
   );

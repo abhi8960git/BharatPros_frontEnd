@@ -13,6 +13,7 @@ import { Modal } from "antd";
 import { MdPayment } from "react-icons/md";
 import DummyComponent from "./DummyComponent.jsx";
 import { FiTrash2 } from "react-icons/fi";
+import { IoArrowBackCircleOutline } from "react-icons/io5";
 // model window
 const configs = [
   {
@@ -178,6 +179,8 @@ export function Register() {
   const [addresses, setAddresses] = useState([]);
   const [isAddingAddress, setIsAddingAddress] = useState(false);
 
+  const [newPageOpened, setNewPageOpened] = useState(false);
+
   const setAddressOpenHandler = () => {
     setIsAddressOpen(!isAddressOpen);
   };
@@ -250,6 +253,16 @@ export function Register() {
   const addNewAddress = () => {
     setIsAddingAddress(false);
     setIsModalOpen(true);
+  };
+
+  const handleOpenNewAddressPage = () => {
+    setNewPageOpened(!newPageOpened);
+  };
+
+  const onCancel = () => {
+    if (newPageOpened) {
+      setNewPageOpened(!newPageOpened);
+    }
   };
 
   return (
@@ -329,55 +342,326 @@ export function Register() {
             onCancel={handleCancel}
             footer={null}
           >
-            <div className="flex flex-col gap-4">
-              {addressLists.map((address, index) => (
-                <div className="bg-[#f5f5f5] border border-gray-200 rounded-md flex flex-col justify-center items-center gap-0 py-4 lg:px-4">
-                  <div className="flex gap-1">
-                    <span className="word-span font-semibold text-center block mb-2">
-                      {address.reachablePerson}
-                    </span>
-                    <span className="word-span font-semibold text-center block mb-2">
-                      {address.reachableNumber}
-                    </span>
-                  </div>
-                  <div className="flex gap-1 text-[0.8em]">
-                    <span className="word-span font-normal text-center block">
-                      Post Office:
-                    </span>
-                    <span className="word-span font-normal text-center block">
-                      {address.postOffice}
-                    </span>
-                  </div>
-                  <div className="flex gap-1 text-[0.8em]">
-                    <span className="word-span font-normal text-center block">
-                      {address.city}
-                    </span>
-                    <span className="word-span font-normal text-center block">
-                      {address.district},
-                    </span>
-                    <span className="word-span font-normal text-center block">
-                      {address.state}
-                    </span>
-                  </div>
-                  <div className="flex  gap-1 text-[0.8em]">
-                    <span className="word-span font-normal text-center block">
-                      Pincode:
-                    </span>
-                    <span className="word-span font-normal text-center block">
-                      {address.pincode}
-                    </span>
-                  </div>
-                  <div className="my-2">
-                    <button
-                      onClick={() => setSelectedAddress(address)}
-                      className="text-sm bg-black/10 p-2 rounded-full text-black px-4 active:scale-105 duration-200 shadow-sm border border-black/10"
-                    >
-                      Select Address
-                    </button>
-                  </div>
+            {!newPageOpened ? (
+              <div className="flex flex-col gap-4">
+                <div className=" flex justify-end   ">
+                  <button
+                    onClick={handleOpenNewAddressPage}
+                    className=" cursor-pointer action:scale-95 duration-200 transition-all flex items-center  gap-2 bg-blue-400 border border-gray-200 px-2 rounded-md shadow"
+                  >
+                    {" "}
+                    add new Address <span className="text-xl">+</span>{" "}
+                  </button>
                 </div>
-              ))}
-            </div>
+                {addressLists.map((address, index) => (
+                  <div className="bg-[#f5f5f5] border border-gray-200 rounded-md flex flex-col justify-center items-center gap-0 py-4 lg:px-4">
+                    <div className="flex gap-1">
+                      <span className="word-span font-semibold text-center block mb-2">
+                        {address.reachablePerson}
+                      </span>
+                      <span className="word-span font-semibold text-center block mb-2">
+                        {address.reachableNumber}
+                      </span>
+                    </div>
+                    <div className="flex gap-1 text-[0.8em]">
+                      <span className="word-span font-normal text-center block">
+                        Post Office:
+                      </span>
+                      <span className="word-span font-normal text-center block">
+                        {address.postOffice}
+                      </span>
+                    </div>
+                    <div className="flex gap-1 text-[0.8em]">
+                      <span className="word-span font-normal text-center block">
+                        {address.city}
+                      </span>
+                      <span className="word-span font-normal text-center block">
+                        {address.district},
+                      </span>
+                      <span className="word-span font-normal text-center block">
+                        {address.state}
+                      </span>
+                    </div>
+                    <div className="flex  gap-1 text-[0.8em]">
+                      <span className="word-span font-normal text-center block">
+                        Pincode:
+                      </span>
+                      <span className="word-span font-normal text-center block">
+                        {address.pincode}
+                      </span>
+                    </div>
+                    <div className="my-2">
+                      <button
+                        onClick={() => setSelectedAddress(address)}
+                        className="text-sm bg-black/10 p-2 rounded-full text-black px-4 active:scale-105 duration-200 shadow-sm border border-black/10"
+                      >
+                        Select Address
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="relative flex flex-col">
+                <span className="text-3xl cursor-pointer" onClick={onCancel}>
+                  {" "}
+                  <IoArrowBackCircleOutline />
+                </span>
+
+                <div className="bg-[#dcd8d8fe] flex justify-center p-5 mb-3 rounded-md font-bold text-xl text-gray-600 mt-4">
+                  <button
+                    className="flex gap-2 items-center "
+                    onClick={() => setAddressOpenHandler()}
+                  >
+                    Add address details
+                    <span className="text-2xl">
+                      {isAddressOpen ? (
+                        <IoMdRemoveCircleOutline />
+                      ) : (
+                        <FiPlusCircle />
+                      )}
+                    </span>
+                  </button>
+                </div>
+
+                {/* {isAddressOpen && ( */}
+                  <div className="  rounded-md p-1 ">
+                    <Grid item xs={12} sm={6}>
+                   
+                    </Grid>
+                    <div className="mb-2">
+                      <label
+                        htmlFor="reachablePerson"
+                        className="block text-sm font-medium text-gray-600"
+                      >
+                        Reachable Person
+                      </label>
+                      <input
+                        type="text"
+                        id="reachablePerson"
+                        className="mt-1 p-2 w-full border rounded-md"
+                        value={reachablePerson}
+                        onChange={(e) => setReachablePerson(e.target.value)}
+                      />
+                    </div>
+
+                    <div className="mb-2">
+                      <label
+                        htmlFor="reachableNumber"
+                        className="block text-sm font-medium text-gray-600"
+                      >
+                        Reachable Number
+                      </label>
+                      {/* <input
+              type="number"
+              id="reachableNumber"
+              className="mt-1 p-2 w-full border rounded-md"
+              value={reachableNumber}
+              onChange={(e) => setReachableNumber(e.target.value)}
+            />  */}
+
+                      <PhoneInput
+                        // containerStyle={{ backgroundColor: "lightgray" }}
+                        buttonStyle={{ border: "1px solid #e4e4e4" }}
+                        inputStyle={{
+                          padding: "20px",
+                          paddingInline: "50px",
+                          border: "1px solid #e4e4e4",
+                          width: "100%",
+                        }}
+                        country={"us"}
+                        // value={this.state.phone}
+                        // onChange={(phone) => this.setState({ phone })}
+                      />
+                    </div>
+
+                    <div className="flex gap-2 w-full md:flex-row lg:flex-row flex-col">
+                      {/* Pincode input */}
+                      <div className="mb-2 w-full">
+                        <label
+                          htmlFor="pincode"
+                          className="block text-sm font-medium text-gray-600"
+                        >
+                          Pincode
+                        </label>
+                        <input
+                          type="number"
+                          id="pincode"
+                          className="mt-1 p-2 w-full border rounded-md"
+                          value={pincode}
+                          onChange={handlePincodeChange}
+                        />
+                      </div>
+
+                      <div className="mb-2 w-full">
+                        <label
+                          htmlFor="postoffice"
+                          className="block text-sm font-medium text-gray-600"
+                        >
+                          Post Office
+                        </label>
+                        <select
+                          id="postoffice"
+                          className="mt-1 p-2 py-2.5 w-full border rounded-md"
+                          value={postoffice}
+                          onChange={(e) => setPostoffice(e.target.value)}
+                        >
+                          <option value="" disabled>
+                            Select Post Office
+                          </option>
+                          {availablePostOffices.map((office) => (
+                            <option key={office} value={office}>
+                              {office}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-2 w-full md:flex-row lg:flex-row flex-col">
+                      <div className="mb-2 w-full">
+                        <label
+                          htmlFor="city"
+                          className="   block text-sm font-medium text-gray-600"
+                        >
+                          City
+                        </label>
+                        <input
+                          type="text"
+                          id="city"
+                          className=" bg-[#f5f5f5] mt-1 p-2 w-full border rounded-md"
+                          value={city}
+                          readOnly
+                        />
+                      </div>
+
+                      <div className="mb-2 w-full ">
+                        <label
+                          htmlFor="district"
+                          className="block text-sm font-medium text-gray-600"
+                        >
+                          District
+                        </label>
+                        <input
+                          type="text"
+                          id="district"
+                          className=" bg-[#f5f5f5] mt-1 p-2 w-full border rounded-md"
+                          value={district}
+                          readOnly
+                        />
+                      </div>
+                      <div className="mb-3 w-full">
+                        <label
+                          htmlFor="state"
+                          className="block text-sm font-medium text-gray-600"
+                        >
+                          State
+                        </label>
+                        <input
+                          type="text"
+                          id="state"
+                          className=" bg-[#f5f5f5] mt-1 p-2 w-full border rounded-md"
+                          value={state}
+                          readOnly
+                        />
+                      </div>
+                    </div>
+
+                    {showAdditionalAddressFields && (
+                      <div>
+                        <div>
+                          {/* Complete Address */}
+                          <div className="mb-3">
+                            <label
+                              htmlFor="address"
+                              className="block text-sm font-medium text-gray-600"
+                            >
+                              Complete Address
+                            </label>
+                            <input
+                              type="text"
+                              id="address"
+                              className="mt-1 p-2 w-full border rounded-md"
+                              value={address}
+                              onChange={(e) => setAddress(e.target.value)}
+                            />
+                          </div>
+
+                          {/* Building Area Details */}
+                          <div className="mb-3">
+                            <label
+                              htmlFor="buildingArea"
+                              className="block text-sm font-medium text-gray-600"
+                            >
+                              Building Area Details
+                            </label>
+                            <input
+                              type="text"
+                              id="buildingArea"
+                              className="mt-1 p-2 w-full border rounded-md"
+                              value={buildingArea}
+                              onChange={(e) => setBuildingArea(e.target.value)}
+                            />
+                          </div>
+
+                          {/* Floor Details */}
+                          <div className="mb-3">
+                            <label
+                              htmlFor="floorDetails"
+                              className="block text-sm font-medium text-gray-600"
+                            >
+                              Floor Details
+                            </label>
+                            <input
+                              type="text"
+                              id="floorDetails"
+                              className="mt-1 p-2 w-full border rounded-md"
+                              value={floorDetails}
+                              onChange={(e) => setFloorDetails(e.target.value)}
+                            />
+                          </div>
+
+                          {/* Landmark */}
+                          <div className="mb-3">
+                            <label
+                              htmlFor="landmark"
+                              className="block text-sm font-medium text-gray-600"
+                            >
+                              Landmark
+                            </label>
+                            <input
+                              type="text"
+                              id="landmark"
+                              className="mt-1 p-2 w-full border rounded-md"
+                              value={landmark}
+                              onChange={(e) => setLandmark(e.target.value)}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    <div className="flex items-center justify-center">
+                      <button
+                        type="button"
+                        className="bg-black text-white hover:bg-white hover:border-2 hover:border-black hover:text-black transition-all duration-200 py-2 px-4 rounded-md mr-2"
+                        onClick={handleCompleteAddressClick}
+                      >
+                        Complete Address
+                      </button>
+
+                      <button
+                        type="button"
+                        className="bg-green-500 text-white py-2 px-4 rounded-md"
+                        onClick={handleSubmit}
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                {/* )} */}
+              </div>
+            )}
           </Modal>
 
           <div class="overflow-x-auto">
@@ -431,7 +715,10 @@ export function Register() {
                   </div>
 
                   <div className="absolute top-3 right-3 cursor-pointer bg-slate-300 p-1 rounded-md  ">
-                    <FiTrash2 className="action:scale-95 transition-all duration-200" onClick={handleRemoveAddress} />
+                    <FiTrash2
+                      className="action:scale-95 transition-all duration-200"
+                      onClick={handleRemoveAddress}
+                    />
                   </div>
                 </div>
               ))}
@@ -504,262 +791,6 @@ export function Register() {
           </button>
         </div>
       </div>
-
-      <div className="bg-[#dcd8d8fe] flex justify-center p-5 mb-3 rounded-md font-bold text-xl text-gray-600 mt-4">
-        <button
-          className="flex gap-2 items-center "
-          onClick={() => setAddressOpenHandler()}
-        >
-          Add address details
-          <span className="text-2xl">
-            {isAddressOpen ? <IoMdRemoveCircleOutline /> : <FiPlusCircle />}
-          </span>
-        </button>
-      </div>
-
-      {isAddressOpen && (
-        <div className="  rounded-md p-1 ">
-          <Grid item xs={12} sm={6}>
-            <Autocomplete
-              options={services}
-              onChange={(event, newValue) => setSelectedService(newValue)}
-              className="mb-2"
-              renderInput={(params) => (
-                <TextField {...params} label="Search..." variant="outlined" />
-              )}
-            />
-          </Grid>
-          <div className="mb-2">
-            <label
-              htmlFor="reachablePerson"
-              className="block text-sm font-medium text-gray-600"
-            >
-              Reachable Person
-            </label>
-            <input
-              type="text"
-              id="reachablePerson"
-              className="mt-1 p-2 w-full border rounded-md"
-              value={reachablePerson}
-              onChange={(e) => setReachablePerson(e.target.value)}
-            />
-          </div>
-
-          <div className="mb-2">
-            <label
-              htmlFor="reachableNumber"
-              className="block text-sm font-medium text-gray-600"
-            >
-              Reachable Number
-            </label>
-            {/* <input
-              type="number"
-              id="reachableNumber"
-              className="mt-1 p-2 w-full border rounded-md"
-              value={reachableNumber}
-              onChange={(e) => setReachableNumber(e.target.value)}
-            />  */}
-
-            <PhoneInput
-              // containerStyle={{ backgroundColor: "lightgray" }}
-              buttonStyle={{ border: "1px solid #e4e4e4" }}
-              inputStyle={{
-                padding: "20px",
-                paddingInline: "50px",
-                border: "1px solid #e4e4e4",
-                width: "100%",
-              }}
-              country={"us"}
-              // value={this.state.phone}
-              // onChange={(phone) => this.setState({ phone })}
-            />
-          </div>
-
-          <div className="flex gap-2 w-full md:flex-row lg:flex-row flex-col">
-            {/* Pincode input */}
-            <div className="mb-2 w-full">
-              <label
-                htmlFor="pincode"
-                className="block text-sm font-medium text-gray-600"
-              >
-                Pincode
-              </label>
-              <input
-                type="number"
-                id="pincode"
-                className="mt-1 p-2 w-full border rounded-md"
-                value={pincode}
-                onChange={handlePincodeChange}
-              />
-            </div>
-
-            <div className="mb-2 w-full">
-              <label
-                htmlFor="postoffice"
-                className="block text-sm font-medium text-gray-600"
-              >
-                Post Office
-              </label>
-              <select
-                id="postoffice"
-                className="mt-1 p-2 py-2.5 w-full border rounded-md"
-                value={postoffice}
-                onChange={(e) => setPostoffice(e.target.value)}
-              >
-                <option value="" disabled>
-                  Select Post Office
-                </option>
-                {availablePostOffices.map((office) => (
-                  <option key={office} value={office}>
-                    {office}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-
-          <div className="flex gap-2 w-full md:flex-row lg:flex-row flex-col">
-            <div className="mb-2 w-full">
-              <label
-                htmlFor="city"
-                className="   block text-sm font-medium text-gray-600"
-              >
-                City
-              </label>
-              <input
-                type="text"
-                id="city"
-                className=" bg-[#f5f5f5] mt-1 p-2 w-full border rounded-md"
-                value={city}
-                readOnly
-              />
-            </div>
-
-            <div className="mb-2 w-full ">
-              <label
-                htmlFor="district"
-                className="block text-sm font-medium text-gray-600"
-              >
-                District
-              </label>
-              <input
-                type="text"
-                id="district"
-                className=" bg-[#f5f5f5] mt-1 p-2 w-full border rounded-md"
-                value={district}
-                readOnly
-              />
-            </div>
-            <div className="mb-3 w-full">
-              <label
-                htmlFor="state"
-                className="block text-sm font-medium text-gray-600"
-              >
-                State
-              </label>
-              <input
-                type="text"
-                id="state"
-                className=" bg-[#f5f5f5] mt-1 p-2 w-full border rounded-md"
-                value={state}
-                readOnly
-              />
-            </div>
-          </div>
-
-          {showAdditionalAddressFields && (
-            <div>
-              <div>
-                {/* Complete Address */}
-                <div className="mb-3">
-                  <label
-                    htmlFor="address"
-                    className="block text-sm font-medium text-gray-600"
-                  >
-                    Complete Address
-                  </label>
-                  <input
-                    type="text"
-                    id="address"
-                    className="mt-1 p-2 w-full border rounded-md"
-                    value={address}
-                    onChange={(e) => setAddress(e.target.value)}
-                  />
-                </div>
-
-                {/* Building Area Details */}
-                <div className="mb-3">
-                  <label
-                    htmlFor="buildingArea"
-                    className="block text-sm font-medium text-gray-600"
-                  >
-                    Building Area Details
-                  </label>
-                  <input
-                    type="text"
-                    id="buildingArea"
-                    className="mt-1 p-2 w-full border rounded-md"
-                    value={buildingArea}
-                    onChange={(e) => setBuildingArea(e.target.value)}
-                  />
-                </div>
-
-                {/* Floor Details */}
-                <div className="mb-3">
-                  <label
-                    htmlFor="floorDetails"
-                    className="block text-sm font-medium text-gray-600"
-                  >
-                    Floor Details
-                  </label>
-                  <input
-                    type="text"
-                    id="floorDetails"
-                    className="mt-1 p-2 w-full border rounded-md"
-                    value={floorDetails}
-                    onChange={(e) => setFloorDetails(e.target.value)}
-                  />
-                </div>
-
-                {/* Landmark */}
-                <div className="mb-3">
-                  <label
-                    htmlFor="landmark"
-                    className="block text-sm font-medium text-gray-600"
-                  >
-                    Landmark
-                  </label>
-                  <input
-                    type="text"
-                    id="landmark"
-                    className="mt-1 p-2 w-full border rounded-md"
-                    value={landmark}
-                    onChange={(e) => setLandmark(e.target.value)}
-                  />
-                </div>
-              </div>
-            </div>
-          )}
-
-          <div className="flex items-center justify-center">
-            <button
-              type="button"
-              className="bg-black text-white hover:bg-white hover:border-2 hover:border-black hover:text-black transition-all duration-200 py-2 px-4 rounded-md mr-2"
-              onClick={handleCompleteAddressClick}
-            >
-              Complete Address
-            </button>
-
-            <button
-              type="button"
-              className="bg-green-500 text-white py-2 px-4 rounded-md"
-              onClick={handleSubmit}
-            >
-              Submit
-            </button>
-          </div>
-        </div>
-      )}
 
       {/* <ImageInput /> */}
       <div className="flex justify-center items-center w-full">
