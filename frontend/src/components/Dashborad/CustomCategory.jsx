@@ -24,7 +24,7 @@ const responsive = {
 const CategorySection = ({ categories }) => {
   return (
     <div className="  lg:max-w-[80em]    w-full px-2 mb-6 rounded-2xl">
-      <CustomText fontSize="text-3xl ml-1 my-3 mb-4 ">
+      <CustomText fontSize="lg:text-3xl md:text-2xl text-lg  ml-1 my-3 mb-4 ">
         {categories[0].categoryName}
       </CustomText>
       <div className="rounded-md">
@@ -34,6 +34,7 @@ const CategorySection = ({ categories }) => {
           itemClass="carousel-item-padding-40-px mb-[6px] -z-30"
           responsive={responsive}
           className="-z-0"
+          
         >
           {categories[0].categories.map((category, index) => (
             <div
@@ -59,7 +60,7 @@ const CategorySection = ({ categories }) => {
                 <p className="text-[0.8em] mt-1 md:mt-2 lg:mt-4">{category.name}</p>
               )} */}
 
-              <p className=" text-[1em]  font-[600] mt-1 md:mt-2 lg:mt-4 ">
+              <p className=" lg:text-[1em] text-[0.8em]   font-[600] mt-1 md:mt-2 lg:mt-4 ">
                 {category.name}
               </p>
             </div>
