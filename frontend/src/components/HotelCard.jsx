@@ -19,6 +19,7 @@ const hotelCard = [
       "/hotel1.2.jpeg",
       // "/hotel1.3.jpeg",
       "/hotel1.4.jpeg",
+      "/hotel1.5.jpeg"
     ],
   },
 ];

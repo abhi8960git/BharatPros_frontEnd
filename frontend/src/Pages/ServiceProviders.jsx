@@ -4,6 +4,7 @@ import SearchComponent from "../components/Dashborad/SearchComponent";
 import HotelCard from "../components/HotelCard";
 import ProfileCard from "../components/ProfileCard";
 import Search from "../components/Search";
+import ProfessionalServiceCard from "../components/ProfessionalServiceCard";
 
 const ServiceProviders = () => {
   const myArray = [0,1,2]
@@ -22,6 +23,8 @@ const ServiceProviders = () => {
             </div>
           ))}
         </div>
+
+      <ProfessionalServiceCard/>
       </div>
     </Wrapper>
   );

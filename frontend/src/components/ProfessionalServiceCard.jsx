@@ -87,7 +87,7 @@ const ProfessionalServiceCard = () => {
           swipeable={true}
           removeArrowOnDeviceType={["mobile"]}
           dotListClass="mt-"
-          itemClass="carousel-item-padding-40-px mb-[6px] ml-2"
+          itemClass="carousel-item-padding-40-px mb-[6px] ml-2 object-contain   relative"
           responsive={responsive}
           autoPlay={1000}
           infinite={true}
@@ -99,6 +99,7 @@ const ProfessionalServiceCard = () => {
             <img src="Carpanter.jpeg" alt="kdjf" className="rounded-md"/>
             <img src="Carpanter.jpeg" alt="kdjf" className="rounded-md"/>
             <img src="Carpanter.jpeg" alt="kdjf" className="rounded-md"/>
+            <img src="hotel1.5.jpeg" alt="m" className="rounded-md"/>
 
         </Carousel>
      </div>

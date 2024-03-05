@@ -11,6 +11,7 @@ import HomeImageBanner from "../components/HomeImageBanner";
 import HeroBanner from "../components/HeroBanner";
 import Footer from "../components/Footer";
 import MainServicesCategory from "../components/Dashborad/MainServicesCategory";
+import NewHeroSection from "../components/NewHeroSection";
 
 const Home = () => {
   return (
@@ -24,6 +25,7 @@ const Home = () => {
       {/* <Header /> */}
       {/* <HomeImageBanner/> */}
       {/* <HeroBanner/> */}
+      <NewHeroSection/>
       <div className="flex items-center  justify-center flex-col ">
         <MainServicesCategory categories={ElectricalCategories}/>
         <CategorySection categories={ElectricalCategories} />
