@@ -12,6 +12,7 @@ import HeroBanner from "../components/HeroBanner";
 import Footer from "../components/Footer";
 import MainServicesCategory from "../components/Dashborad/MainServicesCategory";
 import NewHeroSection from "../components/NewHeroSection";
+import DesktopBanners from "../components/Sample_2";
 
 const Home = () => {
   return (
@@ -38,6 +39,8 @@ const Home = () => {
       <div className="hidden sm:block">
         <Footer/>
       </div>
+
+      <DesktopBanners/>
       
       
     </Wrapper>
