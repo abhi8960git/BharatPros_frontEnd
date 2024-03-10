@@ -1,8 +1,9 @@
 import React from "react";
+import { LayoutGridDemo } from "./LayoutGridDemo";
 
 const NewHeroSection = () => {
   return (
-    <div className="  flex justify-center lg:gap-[9em] items-center mb-5 mt-8">
+    <div className="  flex justify-center lg:gap-[9em] items-center mb-5 -mt-[5em]">
       {/* first section */}
       <div className="flex flex-col gap-2.5">
         <p className="text-4xl  font-bold mb-5">Get Services of your surrounding <br/> online </p>
@@ -41,7 +42,7 @@ const NewHeroSection = () => {
         </div>
       </div>
       {/* seconed section */}
-      <div className="grid grid-cols-2 gap-3 mt-3">
+      {/* <div className="grid grid-cols-2 gap-3 mt-3">
         {[
           { imgName: "RajMistri.jpeg", roundness: "rounded-tl-lg" },
           { imgName: "RajMistri.jpeg", roundness: "rounded-tr-lg" },
@@ -57,7 +58,9 @@ const NewHeroSection = () => {
             />
           </div>
         ))}
-      </div>
+      </div> */}
+      
+      <LayoutGridDemo/>
     </div>
   );
 };

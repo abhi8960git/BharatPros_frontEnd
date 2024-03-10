@@ -13,6 +13,7 @@ import Footer from "../components/Footer";
 import MainServicesCategory from "../components/Dashborad/MainServicesCategory";
 import NewHeroSection from "../components/NewHeroSection";
 import DesktopBanners from "../components/Sample_2";
+import { LayoutGridDemo } from "../components/LayoutGridDemo";
 
 const Home = () => {
   return (
@@ -26,6 +27,8 @@ const Home = () => {
       {/* <Header /> */}
       {/* <HomeImageBanner/> */}
       {/* <HeroBanner/> */}
+      {/* <LayoutGridDemo/> */}
+
       <NewHeroSection/>
       <div className="flex items-center  justify-center flex-col ">
         <MainServicesCategory categories={ElectricalCategories}/>
@@ -40,7 +43,8 @@ const Home = () => {
         <Footer/>
       </div>
 
-      <DesktopBanners/>
+      
+
       
       
     </Wrapper>

@@ -11,8 +11,9 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "antd": "^5.12.6",
+    "clsx": "^2.1.0",
     "dropzone": "^6.0.0-beta.2",
-    "framer-motion": "^10.17.9",
+    "framer-motion": "^10.18.0",
     "mui-tel-input": "^5.0.0",
     "random-avatar-generator": "^2.0.0",
     "react": "^18.2.0",
@@ -26,6 +27,7 @@
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.0.5",
+    "tailwind-merge": "^2.2.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
