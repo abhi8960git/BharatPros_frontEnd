@@ -30,6 +30,7 @@ const Home = () => {
       {/* <LayoutGridDemo/> */}
 
       <NewHeroSection/>
+      <DesktopBanners/>
       <div className="flex items-center  justify-center flex-col ">
         <MainServicesCategory categories={ElectricalCategories}/>
         <CategorySection categories={ElectricalCategories} />

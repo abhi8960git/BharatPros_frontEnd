@@ -1,6 +1,33 @@
 import React from "react";
 import Slider from "react-slick";
+import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack} from "react-icons/io";
 
+
+
+
+
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <span
+      className={className}
+      onClick={onClick}
+      style={{ ...style, display: "block", background: "green" }}
+    ><IoIosArrowForward/></span>
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <span
+      className={className}
+      style={{ ...style, display: "block", background: "green" }}
+      onClick={onClick}
+    ><IoIosArrowBack/></span>
+  );
+}
 
 const settings = {
   // dots: true,
@@ -11,7 +38,14 @@ const settings = {
   // autoplay: true,
   autoplaySpeed: 3000, // Adjust the autoplay speed in milliseconds
   // arrows: false, // Remove navigation icon
+  // arrows:true
+  nextArrow: <SampleNextArrow />,
+  prevArrow: <SamplePrevArrow />
+  
 };
+
+
+
 
 const DesktopBanners = () => {
   return (
@@ -40,7 +74,7 @@ const DesktopBanners = () => {
                 // width="full"
                 width={400}
 
-                className="object-cover  hover:scale-105 transitions-all duration-200 rounded-xl "
+                className="object-cover   hover:scale-105 transitions-all duration-200 rounded-xl "
               />
             </div>
           ))}

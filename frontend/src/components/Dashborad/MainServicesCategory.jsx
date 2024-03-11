@@ -59,9 +59,7 @@ const MainServicesCategory = ({ categories }) => {
                 <p className="text-[0.8em] mt-1 md:mt-2 lg:mt-4">{category.name}</p>
               )} */}
 
-              <p className=" lg:text-[1em] text-[0.8em]  font-[600] mt-1 md:mt-2 lg:mt-4 ">
-                {category.name}
-              </p>
+             
             </div>
           ))}
         </Carousel>
