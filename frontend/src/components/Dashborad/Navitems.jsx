@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect,useRef } from "react";
 import { MdLogin } from "react-icons/md";
 import { Modal } from "antd";
 import { MuiTelInput } from "mui-tel-input";
 import { IoIosArrowDown } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross1 } from "react-icons/rx";
-
+import { GrPowerShutdown } from "react-icons/gr";
 const Navitems = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [phone, setPhone] = React.useState("");
+  const [showLogout, setShowLogout] = useState(false);
+  const logoutRef = useRef(null);
 
   const handleChange = (newPhone) => {
     setPhone(newPhone);
@@ -26,6 +28,27 @@ const Navitems = () => {
     setIsModalOpen(false);
   };
 
+
+  const handleSelectChange = () => {
+    setShowLogout(!showLogout);
+  };
+
+  const handleLogout = () => {
+    setShowLogout(false);
+  };
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (logoutRef.current && !logoutRef.current.contains(event.target)) {
+        setShowLogout(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
     <>
       <div className="bg-white border-b border-b-black/10  flex justify-center lg:px-3 items-center py-3.5 z-40 sticky top-0">
@@ -38,13 +61,40 @@ const Navitems = () => {
           </div>
           <div className="flex items-center gap-5">
             <p className="hover:text-blue-400">Register as Service Provider</p>
-            <button
-              className="flex items-center justify-center gap-1 px-3 py-2 rounded-[5px] shadow-sm border border-black/15  text-black transition-all duration-200 font-bold"
-              onClick={showModal}
-            >
-              Login
-              <MdLogin />
-            </button>
+            {
+              false ? (
+                <button
+                  className="flex items-center justify-center gap-1 px-3 py-2 rounded-[5px] shadow-sm border border-black/15  text-black transition-all duration-200 font-bold"
+                  onClick={showModal}
+                >
+                  Login
+                  <MdLogin />
+                </button>
+              ) : (
+                <div>
+                  <button
+                    className=" relative flex items-center justify-center gap-1 px-3 py-2 rounded-[5px] shadow-sm border border-black/15  text-black transition-all duration-200 font-bold"
+                    onClick={handleSelectChange}
+                  >
+                    <p>Abhishek</p>
+                    {/* <MdLogin /> */}
+                  </button>
+
+                  {showLogout && (
+                    <div ref={logoutRef} className="absolute border border-black/10  mt-1 rounded-md bg-white w-[200px] h-[100px] right-3">
+                      <p className="text-xl p-3 font-bold" >Abhishek</p>
+                      <hr />
+                     <div className="flex   items-center p-3 gap-1  text-lg " onClick={handleLogout}>
+                     <button  className="">Logout</button>
+                      <GrPowerShutdown/>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+
+              )
+            }
           </div>
         </div>
       </div>

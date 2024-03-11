@@ -1,47 +1,36 @@
 import React from "react";
 import Slider from "react-slick";
 import { IoIosArrowForward } from "react-icons/io";
-import { IoIosArrowBack} from "react-icons/io";
+import { IoIosArrowBack } from "react-icons/io";
 
 
 
 
 
 function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
+   const { className, style, onClick } = props;
   return (
-    <span
-      className={className}
-      onClick={onClick}
-      style={{ ...style, display: "block", background: "green" }}
-    ><IoIosArrowForward/></span>
+      <img src="forward.png" alt="forward" {...props} />
   );
 }
 
 function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
   return (
-    <span
-      className={className}
-      style={{ ...style, display: "block", background: "green" }}
-      onClick={onClick}
-    ><IoIosArrowBack/></span>
+
+    <img src="backArrow.png" alt="forward" className="" {...props} />
   );
 }
 
 const settings = {
-  // dots: true,
-  // infinite: true,
+
   speed: 500,
   slidesToShow: 3,
   slidesToScroll: 3,
   // autoplay: true,
   autoplaySpeed: 3000, // Adjust the autoplay speed in milliseconds
-  // arrows: false, // Remove navigation icon
-  // arrows:true
   nextArrow: <SampleNextArrow />,
-  prevArrow: <SamplePrevArrow />
-  
+  prevArrow: <SamplePrevArrow />,
+
 };
 
 
@@ -55,12 +44,12 @@ const DesktopBanners = () => {
           {...settings}
         >
           {[
-            { imgName: "Poster-Services-Electrician.jpeg"},
-            { imgName: "Poster-Services-Electrician.jpeg"},
-            { imgName: "Poster-Services-Electrician.jpeg"},
-            { imgName: "Poster-Services-Electrician.jpeg"},
-            { imgName: "Poster-Services-Electrician.jpeg"},
-            { imgName: "Poster-Services-Electrician.jpeg"},
+            { imgName: "Poster-Services-Electrician.jpeg" },
+            { imgName: "Poster-Services-Electrician.jpeg" },
+            { imgName: "Poster-Services-Electrician.jpeg" },
+            { imgName: "Poster-Services-Electrician.jpeg" },
+            { imgName: "Poster-Services-Electrician.jpeg" },
+            { imgName: "Poster-Services-Electrician.jpeg" },
             // { imgName: "HomeStaysBanner.jpeg"},
             // { imgName: "PlumberBanner.jpeg"},
           ].map((e, index) => (
