@@ -10,14 +10,26 @@ import { IoIosArrowBack } from "react-icons/io";
 function SampleNextArrow(props) {
    const { className, style, onClick } = props;
   return (
-      <img src="forward.png" alt="forward" {...props} />
+      <img src="forward.png" alt="forward"
+      className={className}
+      style={{ ...style}}
+      onClick={onClick}
+      
+      />
   );
 }
 
 function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+
   return (
 
-    <img src="backArrow.png" alt="forward" className="" {...props} />
+    <img src="backArrow.png" alt="forward" 
+    className={className}
+    style={{ ...style, marginLeft:"-17px"}}
+    onClick={onClick}
+    
+     />
   );
 }
 
