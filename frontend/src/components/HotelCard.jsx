@@ -27,11 +27,11 @@ const hotelCard = [
 
 const HotelCard = () => {
   const settings = {
-    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    dots:true,
     // autoplay: true,
     autoplaySpeed: 3000, // Adjust the autoplay speed in milliseconds
     // arrows: false, // Remove navigation icon
@@ -43,7 +43,7 @@ const HotelCard = () => {
         {hotelCard.map((hotel, index) => (
           <div key={index} className="py-4 sm:py-10 px-8 bg-[#f5f5f5] rounded-lg ">
             <div className="flex  ">
-              <div className="w-full overflow-hidden rounded-md  h-[178px]  ">
+              <div className="w-full overflow-hidden rounded-md object-contain h-[178px]  ">
                 {hotelCard[0].hotelImages == 0 ? (
                   <div className=" -mt-2 relative flex items-center justify-center">
                     <img src="/hotelNoImage.jpg" alt="hotelNoImage" width="full" height="full" />
