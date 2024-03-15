@@ -7,7 +7,7 @@ import Search from "../components/Search";
 const Hotel = () => {
   return (
     <Wrapper>
-      <div className="">
+      <div className="lg:w-[80em] m-auto ">
         <div className=" flex justify-center sticky">
         {/* <SearchComponent placeholderText="Search Hotels.." /> */}
         <Search/>
@@ -22,8 +22,8 @@ const Hotel = () => {
           ))}
         </div> */}
         
-        <div className="mt-3 flex flex-col gap-3 justify-center ">
-          {[0, 1, 2].map(() => (
+        <div className="mt-3 lg:grid lg:grid-cols-3  gap-3 md:grid md:grid-cols-2">
+          {[0, 1, 2,3,4,5].map(() => (
             <div className="w-full ">
               <HotelCard />
             </div>

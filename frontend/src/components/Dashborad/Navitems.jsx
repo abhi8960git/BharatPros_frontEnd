@@ -6,6 +6,8 @@ import { IoIosArrowDown } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross1 } from "react-icons/rx";
 import { GrPowerShutdown } from "react-icons/gr";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import { MdKeyboardArrowUp } from "react-icons/md";
 const Navitems = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [phone, setPhone] = React.useState("");
@@ -76,13 +78,17 @@ const Navitems = () => {
                     className=" relative flex items-center justify-center gap-1 px-3 py-2 rounded-[5px] shadow-sm border border-black/15  text-black transition-all duration-200 font-bold"
                     onClick={handleSelectChange}
                   >
-                    <p>Abhishek</p>
+                    <p className="flex items-center">Abhishek 
+                    {
+                      !showLogout ? <span className="text-xl"><MdKeyboardArrowDown/></span> : <span className="text-xl"z><MdKeyboardArrowUp/></span> 
+                    }
+                    </p>
                     {/* <MdLogin /> */}
                   </button>
 
                   {showLogout && (
                     <div ref={logoutRef} className="absolute border border-black/10  mt-1 rounded-md bg-white w-[200px] h-[100px] right-3">
-                      <p className="text-xl p-3 font-bold" >Abhishek</p>
+                      <p className="text-xl p-3 font-bold" >Abhishek </p>
                       <hr />
                      <div className="flex   items-center p-3 gap-1  text-lg " onClick={handleLogout}>
                      <button  className="">Logout</button>
