@@ -9,8 +9,8 @@ const Hotel = () => {
     <Wrapper>
       <div className="lg:w-[80em] m-auto ">
         <div className=" flex justify-center sticky">
-        {/* <SearchComponent placeholderText="Search Hotels.." /> */}
-        <Search/>
+          {/* <SearchComponent placeholderText="Search Hotels.." /> */}
+          <Search />
 
         </div>
 
@@ -21,15 +21,17 @@ const Hotel = () => {
             </>
           ))}
         </div> */}
-        
-        <div className="mt-3 lg:grid lg:grid-cols-3  gap-3 md:grid md:grid-cols-2">
-          {[0, 1, 2,3,4,5].map(() => (
-            <div className="w-full ">
+
+<div className="mt-3 flex flex-wrap justify-center">
+          {[0,1,3,4].map((_, index) => (
+            <div key={index} className="w-full lg:w-1/3 md:w-1/2 px-2 mb-4">
               <HotelCard />
             </div>
           ))}
-        </div>
 
+
+
+</div>
       </div>
     </Wrapper>
   );
