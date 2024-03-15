@@ -7,7 +7,7 @@ import Search from "../components/Search";
 import ProfessionalServiceCard from "../components/ProfessionalServiceCard";
 
 const ServiceProviders = () => {
-  const myArray = [0,1,2,3]
+  const myArray = [0,1,]
   return (
     <Wrapper>
       <div className="lg:w-[80em] m-auto">
@@ -15,7 +15,7 @@ const ServiceProviders = () => {
           {/* <SearchComponent placeholderText="Search Hotels.." /> */}
           <Search />
         </div>
-        <div className={`${myArray.length == 1 ?'flex justify-center' : 'grid lg:grid-cols-4  md:grid-cols-3 gap-3 mx-3 mt-3 '} `}>
+        <div className={`${myArray.length == 1 ?'flex justify-center ' : 'grid lg:grid-cols-3 md:grid-cols- gap-3 mx-3 mt-7 '} `}>
           {myArray.map((index,e) => (
             <div key={index}>
               {/* <p>{myArray.length}</p> */}
