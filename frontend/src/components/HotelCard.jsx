@@ -31,7 +31,7 @@ const HotelCard = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    dots:true,
+    dots: true,
     // autoplay: true,
     autoplaySpeed: 3000, // Adjust the autoplay speed in milliseconds
     // arrows: false, // Remove navigation icon
@@ -42,28 +42,31 @@ const HotelCard = () => {
       <div>
         {hotelCard.map((hotel, index) => (
           <div key={index} className="py-4 sm:py-10 px-8 bg-[#f5f5f5] rounded-lg ">
-            <div className="flex  ">
-              <div className="w-full overflow-hidden rounded-md object-contain h-[178px]  ">
-                {hotelCard[0].hotelImages == 0 ? (
-                  <div className=" -mt-2 relative flex items-center justify-center">
+            <div className="flex">
+              <div className="w-full overflow-hidden rounded-md object-contain h-[178px]">
+                {hotelCard[0].hotelImages.length === 0 ? (
+                  <div className="-mt-2 relative flex items-center justify-center">
                     <img src="/hotelNoImage.jpg" alt="hotelNoImage" width="full" height="full" />
                   </div>
                 ) : (
                   <Slider {...settings}>
                     {hotelCard[0].hotelImages.map((e, index) => (
-                      <>
-                        <div key={index} className="rounded-md  flex items-center justify-center bg-white ">
-                          <div className="relative">
-
-                            <img src={e} alt={e} width="full" height="full" />
-                          </div>
+                      <div key={index} className="rounded-md flex items-center justify-center bg-white">
+                        <div className="relative w-full h-full">
+                          <img
+                            src={e}
+                            alt={e}
+                            className="w-full h-full object-cover"
+                            style={{ objectFit: 'cover' }}
+                          />
                         </div>
-                      </>
+                      </div>
                     ))}
                   </Slider>
                 )}
               </div>
             </div>
+
             <div className="flex flex-col mt-2 mx-2 gap-1">
 
               <div className="flex justify-center w-full">
