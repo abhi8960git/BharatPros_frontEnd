@@ -32,7 +32,7 @@ const HotelCard = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 3000, // Adjust the autoplay speed in milliseconds
     // arrows: false, // Remove navigation icon
   };
@@ -77,12 +77,12 @@ const HotelCard = () => {
               {hotel.hotel.address}
             </p>
 
-            <div className="flex justify-between  items-end px-2 py-1 rounded-full active:scale-105 duration-200 mt-1">
+            <div className="flex justify-between  items-end px-2 py-1 rounded-full duration-200 mt-1">
               <div>
                 <p><span className="font-bold">124rs </span>/<span className="text-sm">night</span></p>
               </div>
 
-              <span className="text-md text-center bg-blue-400 px-4 py-1 shadow rounded-[4px] font-bold">Book now</span>
+              <span className="text-md text-center bg-blue-400 px-4 py-1 shadow rounded-[4px] font-bold cursor-pointer">Book now</span>
             </div>
           </div>
         ))}

@@ -42,6 +42,8 @@ const settings = {
   autoplaySpeed: 3000, // Adjust the autoplay speed in milliseconds
   nextArrow: <SampleNextArrow />,
   prevArrow: <SamplePrevArrow />,
+  
+
 
 };
 
