@@ -9,10 +9,17 @@ const ProfileCard = (props) => {
   console.log(ArrayLength);
   return (
 
-    <div className={`flex lg:flex-row  flex-col  lg:gap-[5em] lg:px-6 lg:py-4 justify-evenly  lg:mx-3 items-center  border border-[#58585850] shadow-sm rounded-lg p-2 w-full relative `}>
-      {/* <p className="text-[0.7em] text-gray-500 text-center mt-1">
-            Solan,Himachal Pradesh{" "}
-          </p> */}
+<div className="border border-[#58585850] shadow-sm rounded-lg">
+    <div className="py-2  bg-blue-400 flex items-center gap-1 pl-4 rounded-t-md">
+      <span className="text-white"><GrLocation/></span>
+    <p className="text-[0.8em] text-white    ">
+    Solan,Himachal Pradesh{" "}
+  </p>
+    </div>
+
+
+    <div className={`flex lg:flex-row  flex-col  lg:gap-[5em] lg:px-6 lg:py-4 justify-evenly  lg:mx-3 items-center   p-2 w-full relative `}>
+     
       <div className=" " >
         <div className="w-[120px] h-[120px] rounded-full">
           <img
@@ -27,7 +34,7 @@ const ProfileCard = (props) => {
 
 
           <p className="text-[0.9em]  font-bold">Satyam Kumar Gupta </p>
-
+          
           {/* <p className="text-[0.8em] ">Chartered Accountant</p> */}
 
 
@@ -52,6 +59,7 @@ const ProfileCard = (props) => {
           </span>
         </span>
       </div>
+    </div>
     </div>
   );
 };
